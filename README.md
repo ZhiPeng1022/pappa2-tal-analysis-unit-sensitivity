@@ -1,5 +1,11 @@
 # PAPPA2 TAL analysis-unit sensitivity analysis
 
+Code repository:
+
+```text
+https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity
+```
+
 Analysis code for the manuscript:
 
 ```text

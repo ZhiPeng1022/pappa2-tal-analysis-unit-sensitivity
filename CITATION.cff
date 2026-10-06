@@ -14,7 +14,7 @@ authors:
     orcid: "https://orcid.org/0009-0009-9088-0016"
 version: "1.0.0"
 date-released: "2026-09-30"
-repository-code: "[TO BE ADDED]"
+repository-code: "https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity"
 abstract: >-
   Analysis code for complete-data donor pseudobulk, Milo neighborhood,
   neighborhood-expression association, within-donor cell-rank, and
