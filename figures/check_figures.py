@@ -1,12 +1,24 @@
 """Basic programmatic QA for generated figure PNGs."""
 
+import os
 from pathlib import Path
 
 import matplotlib.image as mpimg
 import numpy as np
 
 
-OUT = Path(r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2\outputs")
+PROJECT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
+OUT = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        PROJECT_ROOT / "outputs",
+    )
+)
 FILES = [
     "Fig1_study_design.png",
     "Fig2_TAL_neighborhood_remodeling.png",

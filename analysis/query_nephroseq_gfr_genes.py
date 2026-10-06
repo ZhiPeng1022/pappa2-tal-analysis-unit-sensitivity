@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import json
 import time
@@ -6,8 +7,17 @@ from urllib.request import Request, urlopen
 import pandas as pd
 
 
+PROJECT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
 WORK_ROOT = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2\work"
+    os.environ.get(
+        "PAPPA2_WORK_ROOT",
+        PROJECT_ROOT / "work",
+    )
 )
 SUMMARY_OUTPUT = (
     WORK_ROOT / "nephroseq_GFR_gene_summary.csv"

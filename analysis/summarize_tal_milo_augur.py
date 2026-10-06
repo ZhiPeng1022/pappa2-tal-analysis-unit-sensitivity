@@ -1,14 +1,33 @@
+import os
 from pathlib import Path
 
 import anndata as ad
 import pandas as pd
 
 
-ROOT = Path(r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2")
-OUTPUT_DIR = ROOT / "outputs"
-INPUT_PATH = Path(
-    r"D:\CodexData\RAMP3\augur_tal_full_input"
-) / "KPMP_augur_tal_full_input.h5ad"
+ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
+DATA_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_DATA_ROOT",
+        ROOT / "data" / "RAMP3",
+    )
+)
+OUTPUT_DIR = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        ROOT / "outputs",
+    )
+)
+INPUT_PATH = (
+    DATA_ROOT
+    / "augur_tal_full_input"
+    / "KPMP_augur_tal_full_input.h5ad"
+)
 
 SUBCLASS_ORDER = [
     "C-TAL-A",

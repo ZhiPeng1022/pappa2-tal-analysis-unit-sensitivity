@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import re
 
@@ -9,14 +10,33 @@ from statsmodels.miscmodels.ordinal_model import OrderedModel
 
 
 PROJECT_ROOT = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2"
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
 )
-OUTPUT_ROOT = PROJECT_ROOT / "outputs"
-WORK_ROOT = PROJECT_ROOT / "work"
+DATA_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_DATA_ROOT",
+        PROJECT_ROOT / "data" / "RAMP3",
+    )
+)
+OUTPUT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        PROJECT_ROOT / "outputs",
+    )
+)
+WORK_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_WORK_ROOT",
+        PROJECT_ROOT / "work",
+    )
+)
 
-STATE_GROUPS = Path(
-    r"D:\CodexData\RAMP3\state_pseudobulk"
-) / "KPMP_PAPPA2_state_groups.csv"
+STATE_GROUPS = (
+    DATA_ROOT / "state_pseudobulk" / "KPMP_PAPPA2_state_groups.csv"
+)
 DONOR_EGFR = (
     OUTPUT_ROOT / "KPMP_donor_eGFR_midpoint.csv"
 )

@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import gzip
 import re
@@ -8,8 +9,17 @@ import statsmodels.formula.api as smf
 from scipy.stats import spearmanr
 
 
+PROJECT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
 WORK_ROOT = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2\work"
+    os.environ.get(
+        "PAPPA2_WORK_ROOT",
+        PROJECT_ROOT / "work",
+    )
 )
 SOFT_PATH = WORK_ROOT / "GSE137570_family.soft.gz"
 COUNTS_PATH = (

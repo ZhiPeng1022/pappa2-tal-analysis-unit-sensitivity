@@ -1,6 +1,6 @@
 # PAPPA2 TAL analysis-unit sensitivity analysis
 
-Code repository:
+Public code and derived-data repository:
 
 ```text
 https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity
@@ -15,8 +15,9 @@ sensitivity in human kidney disease
 
 ## Overview
 
-This repository contains the complete-data analysis code for four human
-thick ascending limb (TAL) subtypes: C-TAL-A, C-TAL-B, aTAL2, and frTAL.
+This repository contains the complete-data analysis code, curated derived
+tables, and generated figures for four human thick ascending limb (TAL)
+subtypes: C-TAL-A, C-TAL-B, aTAL2, and frTAL.
 
 The analysis compares:
 
@@ -50,6 +51,10 @@ sample-level GFR annotations are not publicly available.
 
 ```text
 repo/
+├─ data/
+│  └─ derived/
+│     ├─ supplementary/       # Supplementary Tables S1-S14 and Figure S1
+│     └─ reanalysis/          # Full-data reanalysis and manifest summaries
 ├─ analysis/
 │  ├─ run_milo_tal_kpmp.R
 │  ├─ prepare_full_tal_milo_metadata.py
@@ -71,7 +76,8 @@ repo/
 ├─ figures/
 │  ├─ make_figures_v2.py
 │  ├─ make_supplementary_figures.py
-│  └─ check_figures.py
+│  ├─ check_figures.py
+│  └─ generated/              # Final figure PNG files
 ├─ manuscript/
 │  ├─ build_manuscript_evidence_matrix.py
 │  ├─ search_refs.py
@@ -85,8 +91,8 @@ repo/
 ```
 
 Archive metadata are provided in `CITATION.cff` and `.zenodo.json`.
-The repository URL and DOI placeholders must be replaced after the
-public release is created.
+The GitHub repository is the working public archive. Zenodo creates a
+versioned DOI archive from tagged GitHub releases.
 
 ## Software
 
@@ -140,8 +146,10 @@ MILO_EXPORT_MEMBERSHIP
 MILO_NORM_METHOD
 ```
 
-Some older auxiliary scripts still contain local paths and should be
-updated before a completely portable archive is deposited.
+All scripts resolve project, output, work, and data paths from the
+`PAPPA2_*` environment variables. The optional variables are
+`PAPPA2_PROJECT_ROOT`, `PAPPA2_DATA_ROOT`, `PAPPA2_OUTPUT_ROOT`, and
+`PAPPA2_WORK_ROOT`.
 
 ## Reproducibility notes
 

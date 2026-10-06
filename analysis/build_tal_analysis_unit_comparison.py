@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import numpy as np
@@ -5,9 +6,17 @@ import pandas as pd
 
 
 PROJECT_ROOT = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2"
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
 )
-OUTPUT_ROOT = PROJECT_ROOT / "outputs"
+OUTPUT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        PROJECT_ROOT / "outputs",
+    )
+)
 
 FULL_PSEUDOBULK = (
     OUTPUT_ROOT / "KPMP_full_TAL_focus_gene_pseudobulk.csv"

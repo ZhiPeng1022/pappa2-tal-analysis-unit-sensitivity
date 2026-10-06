@@ -1,5 +1,6 @@
 """Generate the supplementary schematic explaining the two analysis units."""
 
+import os
 from pathlib import Path
 
 import matplotlib
@@ -9,7 +10,18 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
 
 
-OUT = Path(r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2\outputs")
+PROJECT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
+OUT = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        PROJECT_ROOT / "outputs",
+    )
+)
 
 
 def box(ax, x, y, width, height, text, face="#EAF2F8", edge="#2A6F97", fontsize=7.5):

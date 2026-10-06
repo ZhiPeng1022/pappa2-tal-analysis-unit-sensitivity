@@ -1,10 +1,16 @@
+import os
 from pathlib import Path
 import re
 
 import pdfplumber
 
 
-ROOT = Path(r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2")
+ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
 SUBMISSION = ROOT / "submission"
 MANUSCRIPT = (
     SUBMISSION

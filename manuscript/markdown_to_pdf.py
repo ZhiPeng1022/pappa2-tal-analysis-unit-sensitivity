@@ -1,5 +1,6 @@
 """Render the v3 manuscript Markdown to a submission-ready PDF."""
 
+import os
 import re
 from pathlib import Path
 
@@ -14,7 +15,12 @@ from reportlab.platypus import (
 )
 
 
-ROOT = Path(r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2")
+ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
 SOURCE = ROOT / "submission" / "manuscript" / "PAPPA2_manuscript_draft_v3_TAL_atlas.md"
 OUTPUT = ROOT / "submission" / "manuscript" / "PAPPA2_manuscript_v3.pdf"
 STOP_MARKER = "## Chinese drafting notes"

@@ -1,4 +1,5 @@
 import argparse
+import os
 from pathlib import Path
 
 import anndata as ad
@@ -6,12 +7,26 @@ import pandas as pd
 from pyaugur import calculate_auc
 
 
+PROJECT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
+DATA_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_DATA_ROOT",
+        PROJECT_ROOT / "data" / "RAMP3",
+    )
+)
 DEFAULT_INPUT_PATH = (
-    Path(r"D:\CodexData\RAMP3\augur_input")
-    / "KPMP_augur_input.h5ad"
+    DATA_ROOT / "augur_input" / "KPMP_augur_input.h5ad"
 )
 DEFAULT_OUTPUT_DIR = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2\outputs"
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        PROJECT_ROOT / "outputs",
+    )
 )
 DEFAULT_OUTPUT_PREFIX = "KPMP_Augur_TAL"
 TAL_SUBCLASSES = [

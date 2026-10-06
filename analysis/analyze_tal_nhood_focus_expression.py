@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import anndata as ad
@@ -7,14 +8,35 @@ from scipy.stats import pearsonr, spearmanr
 
 
 PROJECT_ROOT = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2"
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
 )
-OUTPUT_ROOT = PROJECT_ROOT / "outputs"
-WORK_ROOT = PROJECT_ROOT / "work"
+DATA_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_DATA_ROOT",
+        PROJECT_ROOT / "data" / "RAMP3",
+    )
+)
+OUTPUT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        PROJECT_ROOT / "outputs",
+    )
+)
+WORK_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_WORK_ROOT",
+        PROJECT_ROOT / "work",
+    )
+)
 
-INPUT_H5AD = Path(
-    r"D:\CodexData\RAMP3\augur_tal_full_input"
-) / "KPMP_augur_tal_full_input.h5ad"
+INPUT_H5AD = (
+    DATA_ROOT
+    / "augur_tal_full_input"
+    / "KPMP_augur_tal_full_input.h5ad"
+)
 
 COMPARISONS = [
     "all_disease",

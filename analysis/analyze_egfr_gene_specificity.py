@@ -7,14 +7,13 @@ from statsmodels.miscmodels.ordinal_model import OrderedModel
 from analyze_pappa2_egfr_adjusted import (
     DONOR_EGFR,
     WORK_ROOT,
+    DATA_ROOT,
     egfr_category,
     disease_group,
 )
 
 
-STATE_DIR = Path(
-    r"D:\CodexData\RAMP3\state_pseudobulk"
-)
+STATE_DIR = DATA_ROOT / "state_pseudobulk"
 GROUPS_PATH = (
     STATE_DIR / "KPMP_PAPPA2_state_groups.csv"
 )

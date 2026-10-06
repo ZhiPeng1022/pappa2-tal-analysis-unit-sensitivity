@@ -4,6 +4,7 @@ Figure 2: TAL subtype disease-associated neighborhood remodeling.
 Figure 3: PAPPA2 donor-level pseudobulk elevation.
 """
 
+import os
 from pathlib import Path
 
 import matplotlib
@@ -15,8 +16,18 @@ import pandas as pd
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Patch
 
 
-ROOT = Path(r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2")
-OUT = ROOT / "outputs"
+ROOT = Path(
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
+)
+OUT = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        ROOT / "outputs",
+    )
+)
 
 SUBCLASSES = ["C-TAL-A", "C-TAL-B", "aTAL2", "frTAL"]
 COMPARISONS = ["disease_vs_Reference", "AKI_vs_Reference", "CKD_vs_Reference"]

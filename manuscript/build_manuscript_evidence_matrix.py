@@ -1,11 +1,20 @@
+import os
 from pathlib import Path
 import csv
 
 
 PROJECT_ROOT = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2"
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
 )
-OUTPUT_ROOT = PROJECT_ROOT / "outputs"
+OUTPUT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_OUTPUT_ROOT",
+        PROJECT_ROOT / "outputs",
+    )
+)
 
 MARKDOWN_OUTPUT = (
     OUTPUT_ROOT / "PAPPA2_manuscript_evidence_matrix_v1.md"

@@ -1,12 +1,21 @@
+import os
 from pathlib import Path
 
 import pandas as pd
 
 
 PROJECT_ROOT = Path(
-    r"C:\Users\Elsa\Documents\Codex\2026-09-25\9-2"
+    os.environ.get(
+        "PAPPA2_PROJECT_ROOT",
+        Path(__file__).resolve().parents[2],
+    )
 )
-OUTPUT_ROOT = PROJECT_ROOT / "internal"
+OUTPUT_ROOT = Path(
+    os.environ.get(
+        "PAPPA2_INTERNAL_ROOT",
+        PROJECT_ROOT / "internal",
+    )
+)
 MD_OUTPUT = (
     OUTPUT_ROOT / "PAPPA2_manuscript_evidence_matrix_v2.md"
 )

@@ -1,0 +1,13 @@
+﻿comparison,subclass,cells_total,donors_total,eligible_donors,eligible_reference_donors,eligible_disease_donors,median_cells_per_eligible_donor,min_cells_per_donor,model_fit
+all_disease,C-TAL-A,41957,206,190,78,112,87.0,5,True
+all_disease,C-TAL-B,29412,199,182,78,104,79.0,5,True
+all_disease,aTAL2,15814,201,168,63,105,26.5,5,True
+all_disease,frTAL,14500,202,176,69,107,43.5,5,True
+AKI_vs_Reference,C-TAL-A,32822,123,114,78,36,107.5,5,True
+AKI_vs_Reference,C-TAL-B,22363,121,110,77,33,92.0,5,True
+AKI_vs_Reference,aTAL2,13427,121,102,66,36,33.5,5,True
+AKI_vs_Reference,frTAL,7012,119,106,70,36,22.0,5,True
+CKD_vs_Reference,C-TAL-A,39782,165,155,78,77,117.0,5,True
+CKD_vs_Reference,C-TAL-B,27282,161,151,78,73,87.0,5,True
+CKD_vs_Reference,aTAL2,9367,159,130,64,66,20.5,5,True
+CKD_vs_Reference,frTAL,13543,163,143,69,74,49.0,5,True
