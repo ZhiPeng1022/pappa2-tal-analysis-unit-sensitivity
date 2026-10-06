@@ -238,7 +238,7 @@ PAPPA2_OUTPUT_ROOT
 PAPPA2_WORK_ROOT
 ```
 
-## 六、数据与代码可用性声明（草稿）
+## 六、数据与代码可用性声明
 
 ```text
 All data analyzed in this study are publicly available. KPMP snRNA-seq
@@ -248,8 +248,10 @@ was obtained from GEO. Nephroseq v5 was queried through its public
 interface. Sample-level GFR annotations for the GSE115098 tubule cohort
 are not publicly available, and that resource was therefore not used for
 external validation. Analysis scripts and result files are stored in the
-project workspace; permanent repository and archive identifiers are
-listed in the final submission.
+public repository at
+https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity and
+are archived through the Zenodo concept DOI
+https://doi.org/10.5281/zenodo.23196128.
 ```
 
 Mendelian randomization was not performed because the public protein
@@ -262,14 +264,16 @@ TAL subtypes. Milo, neighborhood association, and within-donor cell-rank
 analyses also used the complete TAL set. The 4,446-cell derivative subset
 was retained only as a coverage and direction comparator.
 
-## 七、正式归档前仍需补齐
+## 七、正式归档状态
 
-1. 建立 Git 仓库并整理脚本目录结构；
-2. 记录 R、Milo、Augur、scipy、statsmodels 的准确版本；
-3. 生成 Zenodo 或同等永久归档 DOI；
-4. 为大型中间文件（如 `KPMP_TAL_seed20260927_*_null.csv.gz`）建立
-   单独的归档清单，避免仓库体积过大；
-5. 把所有绝对路径（`C:\Users\...`）改成相对路径或环境变量；
-6. 补充数据使用的伦理声明和 KPMP 数据使用条款。
-7. 如果目标期刊要求，可把完整 TAL 伪批量脚本合并为一个单一
-   入口脚本，减少复现步骤。
+已完成：
+
+1. 已建立公开 GitHub 仓库并整理脚本、派生表和生成图目录；
+2. 已记录 Python、R、Milo、Augur、scipy、statsmodels 等运行环境和种子；
+3. 已生成 Zenodo 概念 DOI `10.5281/zenodo.23196128`；
+4. 大型派生补充表以 `.csv.gz` 和补充表清单形式归档；
+5. 核心脚本已改用 `PAPPA2_*` 环境变量，不再包含个人电脑路径；
+6. 已在正文和补充材料中写明公开数据来源、伦理和数据使用边界。
+
+后续可选优化：如果目标期刊要求，可将完整 TAL 分析链合并为单一
+入口脚本，减少复现步骤。

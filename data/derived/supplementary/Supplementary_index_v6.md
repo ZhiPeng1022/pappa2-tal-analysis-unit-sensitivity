@@ -3,7 +3,11 @@
 Manuscript: `Subtype-specific thick ascending limb states and analysis-unit
 sensitivity in human kidney disease`
 
-Date: 2026-09-30
+Date: 2026-10-07
+
+Repository: `https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity`
+
+Zenodo concept DOI: `https://doi.org/10.5281/zenodo.23196128`
 
 ## Supplementary tables
 

@@ -6,6 +6,12 @@ Public code and derived-data repository:
 https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity
 ```
 
+Zenodo concept DOI:
+
+```text
+https://doi.org/10.5281/zenodo.23196128
+```
+
 Analysis code for the manuscript:
 
 ```text
@@ -92,7 +98,8 @@ repo/
 
 Archive metadata are provided in `CITATION.cff` and `.zenodo.json`.
 The GitHub repository is the working public archive. Zenodo creates a
-versioned DOI archive from tagged GitHub releases.
+versioned DOI archive from tagged GitHub releases; the concept DOI above
+resolves to the latest archived version.
 
 ## Software
 
@@ -163,9 +170,9 @@ All scripts resolve project, output, work, and data paths from the
 
 ## Citation
 
-```text
-[Manuscript citation to be added]
-```
+The manuscript citation will be added after publication. For the code and
+derived-data archive, cite the Zenodo concept DOI
+`https://doi.org/10.5281/zenodo.23196128`.
 
 ## Contact
 
