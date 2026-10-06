@@ -1,0 +1,29 @@
+{
+  "title": "Complete-data analysis-unit sensitivity in human kidney thick ascending limb states",
+  "upload_type": "software",
+  "description": "Analysis code for donor pseudobulk, Milo neighborhood, neighborhood-expression association, within-donor cell-rank, and analysis-unit comparison in human kidney thick ascending limb subtypes.",
+  "creators": [
+    {
+      "name": "Zhi, Peng",
+      "orcid": "0009-0003-2201-5131"
+    },
+    {
+      "name": "Yan, Xiaohe",
+      "orcid": "0009-0006-2259-9271"
+    },
+    {
+      "name": "Zhang, Chaofan",
+      "orcid": "0009-0009-9088-0016"
+    }
+  ],
+  "keywords": [
+    "human kidney",
+    "thick ascending limb",
+    "single-nucleus RNA sequencing",
+    "Milo",
+    "analysis-unit sensitivity"
+  ],
+  "version": "1.0.0",
+  "publication_date": "2026-09-30",
+  "access_right": "open"
+}

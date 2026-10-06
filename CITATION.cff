@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript and archived release."
+title: "Complete-data analysis-unit sensitivity in human kidney thick ascending limb states"
+type: software
+authors:
+  - family-names: Zhi
+    given-names: Peng
+    orcid: "https://orcid.org/0009-0003-2201-5131"
+  - family-names: Yan
+    given-names: Xiaohe
+    orcid: "https://orcid.org/0009-0006-2259-9271"
+  - family-names: Zhang
+    given-names: Chaofan
+    orcid: "https://orcid.org/0009-0009-9088-0016"
+version: "1.0.0"
+date-released: "2026-09-30"
+repository-code: "[TO BE ADDED]"
+abstract: >-
+  Analysis code for complete-data donor pseudobulk, Milo neighborhood,
+  neighborhood-expression association, within-donor cell-rank, and
+  analysis-unit comparison in human kidney thick ascending limb subtypes.
+keywords:
+  - human kidney
+  - thick ascending limb
+  - single-nucleus RNA sequencing
+  - Milo
+  - analysis-unit sensitivity
