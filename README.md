@@ -59,7 +59,7 @@ sample-level GFR annotations are not publicly available.
 repo/
 ├─ data/
 │  └─ derived/
-│     ├─ supplementary/       # Supplementary Tables S1-S14 and Figure S1
+│     ├─ supplementary/       # BMC additional files 1-13 (submission naming)
 │     └─ reanalysis/          # Full-data reanalysis and manifest summaries
 ├─ analysis/
 │  ├─ run_milo_tal_kpmp.R
@@ -100,6 +100,25 @@ Archive metadata are provided in `CITATION.cff` and `.zenodo.json`.
 The GitHub repository is the working public archive. Zenodo creates a
 versioned DOI archive from tagged GitHub releases; the concept DOI above
 resolves to the latest archived version.
+
+## Submission files (BMC Medical Genomics)
+
+The supplementary material follows the BMC requirement that additional files
+are named `Additional file N` and cited in the manuscript in numeric order.
+The mapping is listed in
+`data/derived/supplementary/Additional_files_index.md`.
+
+Two files that were part of the v1.0.2 archive are no longer used:
+
+| Removed file | Reason |
+|---|---|
+| `Table_S9_full_TAL_pseudobulk.csv` | Identical to `Table_S3_full_pseudobulk.csv` (`Additional file 9.csv`) |
+| `Figure_S1_analysis_units.png` | Duplicated the analysis-unit design already shown in main Fig. 3 |
+
+Main Fig. 3 is retained. The statistics shown in the removed supplementary
+schematic (500 donor-stratified resamples, purity-adjusted partial
+correlation, 1,000 within-donor permutations, 3/5/10 cell thresholds) are
+already reported in the Methods section of the manuscript.
 
 ## Software
 

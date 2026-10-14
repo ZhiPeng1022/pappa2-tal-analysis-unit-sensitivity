@@ -1,9 +1,22 @@
+"""检查 BMC 版投稿材料与仓库派生数据是否一致。
+
+检查内容：
+1. BMC 版主稿存在，且含 Fig. 1-8 图注；
+2. 正文图引用按首次出现顺序 1-8；
+3. 正文附加文件引用按首次出现顺序 1-13；
+4. 仓库 data/derived/supplementary 下为 13 个 Additional file，且无旧 Table_S 残留；
+5. 8 张 v5 主图存在；
+6. BMC 版 DOCX 含连续行号且无分页符。
+
+用法：
+    python manuscript/check_submission_consistency.py
+"""
+
 import os
-from pathlib import Path
 import re
-
-import pdfplumber
-
+import sys
+import zipfile
+from pathlib import Path
 
 ROOT = Path(
     os.environ.get(
@@ -12,234 +25,132 @@ ROOT = Path(
     )
 )
 SUBMISSION = ROOT / "submission"
-MANUSCRIPT = (
-    SUBMISSION
-    / "manuscript"
-    / "PAPPA2_manuscript_draft_v9_precise.md"
+REPO = ROOT / "repo"
+
+MANUSCRIPT_MD = (
+    SUBMISSION / "manuscript" / "PAPPA2_manuscript_BMC_Medical_Genomics_v1.md"
 )
-PDF = SUBMISSION / "manuscript" / "PAPPA2_manuscript_v9.pdf"
-SUPPLEMENTARY = SUBMISSION / "supplementary_v6"
+MANUSCRIPT_DOCX = (
+    SUBMISSION / "manuscript" / "PAPPA2_manuscript_BMC_Medical_Genomics_v1.docx"
+)
 FIGURE_DIR = SUBMISSION / "figures"
-REPORT = ROOT / "outputs" / "PAPPA2_submission_consistency_report_v1.md"
+REPO_SUPPLEMENTARY = REPO / "data" / "derived" / "supplementary"
+REPORT = ROOT / "outputs" / "PAPPA2_bmc_submission_consistency_report.md"
+
+N_ADDITIONAL_FILES = 13
 
 
-def figure_legends(text):
-    return sorted(
-        {
-            int(number)
-            for number in re.findall(
-                r"\*\*Figure\s+(\d+)\.",
-                text,
-            )
-        }
-    )
+def unique_in_order(pattern, text):
+    """按出现顺序返回去重后的编号列表。"""
+    seen = []
+    for match in re.finditer(pattern, text):
+        value = int(match.group(1))
+        if value not in seen:
+            seen.append(value)
+    return seen
 
 
-def supplementary_tables(text):
-    return sorted(
-        {
-            int(number)
-            for number in re.findall(
-                r"\|\s*Table\s+S(\d+)\s*\|",
-                text,
-            )
-        }
-    )
+def additional_citations_in_order(text):
+    """按首次出现顺序返回正文引用的附加文件编号。
 
-
-def supplementary_figures(text):
-    return sorted(
-        {
-            int(number)
-            for number in re.findall(
-                r"\|\s*Figure\s+S(\d+)\s*\|",
-                text,
-            )
-        }
-    )
-
-
-def check_file_group(prefix, expected_numbers, directory):
-    missing = []
-    found = []
-    for number in expected_numbers:
-        matches = sorted(directory.glob(f"{prefix}{number}_*"))
-        if len(matches) == 1:
-            found.append(matches[0].name)
-        else:
-            missing.append((number, [path.name for path in matches]))
-    return found, missing
+    只扫描正文（Introduction 到 Conclusions），并解析
+    "Additional files 2 and 3" 这类一次引用多个编号的写法。
+    """
+    body = text.split("## List of abbreviations")[0]
+    seen = []
+    for match in re.finditer(r"Additional files? ([^)]+)", body):
+        for number in re.findall(r"\d+", match.group(1)):
+            value = int(number)
+            if value not in seen:
+                seen.append(value)
+    return seen
 
 
 def main():
-    if not MANUSCRIPT.exists():
-        raise FileNotFoundError(MANUSCRIPT)
-    text = MANUSCRIPT.read_text(encoding="utf-8")
-    legend_numbers = figure_legends(text)
-    index_text = (
-        SUPPLEMENTARY / "Supplementary_index_v6.md"
-    ).read_text(encoding="utf-8")
-    table_numbers = supplementary_tables(index_text)
-    supplementary_figure_numbers = supplementary_figures(index_text)
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:  # noqa: BLE001
+        pass
+
+    if not MANUSCRIPT_MD.exists():
+        raise FileNotFoundError(MANUSCRIPT_MD)
+    text = MANUSCRIPT_MD.read_text(encoding="utf-8")
+
+    body = text.split("## List of abbreviations")[0]
+    legend_numbers = sorted(
+        int(number) for number in re.findall(r"\*\*Fig\. (\d)\. ", text)
+    )
+    figure_citations = unique_in_order(r"\(Fig\. (\d)", body)
+    additional_citations = additional_citations_in_order(text)
+
+    repo_files = sorted(
+        path.name
+        for path in REPO_SUPPLEMENTARY.glob("Additional file *")
+    )
+    leftover = sorted(
+        path.name for path in REPO_SUPPLEMENTARY.glob("Table_S*")
+    )
+    removed = [
+        name
+        for name in ("Figure_S1_analysis_units.png",
+                     "Table_S9_full_TAL_pseudobulk.csv")
+        if (REPO_SUPPLEMENTARY / name).exists()
+    ]
 
     v5_figures = sorted(FIGURE_DIR.glob("*_v5.png"))
-    table_files, missing_tables = check_file_group(
-        "Table_S",
-        table_numbers,
-        SUPPLEMENTARY,
-    )
-    figure_s_files, missing_figure_s = check_file_group(
-        "Figure_S",
-        supplementary_figure_numbers,
-        SUPPLEMENTARY,
-    )
-    old_reference_hits = []
-    for path in SUBMISSION.rglob("*"):
-        if path.is_file() and path.suffix.lower() in {
-            ".md",
-            ".csv",
-            ".txt",
-        }:
-            file_text = path.read_text(
-                encoding="utf-8",
-                errors="ignore",
-            )
-            for pattern in [
-                "evidence_matrix_v1",
-                "figure_assembly_plan_v1",
-            ]:
-                if pattern in file_text:
-                    old_reference_hits.append(
-                        f"{path.relative_to(ROOT)} -> {pattern}"
-                    )
 
-    page_count = None
-    pdf_ok = False
-    if PDF.exists():
-        with pdfplumber.open(PDF) as pdf:
-            page_count = len(pdf.pages)
-            pdf_text = "\n".join(
-                (page.extract_text() or "")
-                for page in pdf.pages
-            )
-        pdf_ok = (
-            "References" in pdf_text
-            and "analysis-unit" in pdf_text.lower()
-        )
+    has_lines = False
+    no_page_break = False
+    if MANUSCRIPT_DOCX.exists():
+        document = zipfile.ZipFile(MANUSCRIPT_DOCX).read(
+            "word/document.xml"
+        ).decode("utf-8")
+        has_lines = "lnNumType" in document
+        no_page_break = not re.search(r'<w:br[^>]*type="page"', document)
 
     checks = [
-        (
-            "Manuscript contains 8 figure legends",
-            legend_numbers == list(range(1, 9)),
-            f"found {legend_numbers}",
-        ),
-        (
-            "Supplementary index contains Tables S1-S14",
-            table_numbers == list(range(1, 15)),
-            f"found {table_numbers}",
-        ),
-        (
-            "Supplementary index contains Figure S1",
-            supplementary_figure_numbers == [1],
-            f"found {supplementary_figure_numbers}",
-        ),
-        (
-            "All v5 figure files exist",
-            len(v5_figures) == 8,
-            f"found {len(v5_figures)}",
-        ),
-        (
-            "All supplementary table files exist",
-            not missing_tables,
-            f"missing {missing_tables}",
-        ),
-        (
-            "All supplementary figure files exist",
-            not missing_figure_s,
-            f"missing {missing_figure_s}",
-        ),
-        (
-            "No v1 matrix/figure-plan references in submission",
-            not old_reference_hits,
-            f"hits {old_reference_hits}",
-        ),
-        (
-            "v9 PDF exists and contains references",
-            pdf_ok,
-            f"pages={page_count}",
-        ),
-        (
-            "v9 text uses complete 106,851-cell primary analyses",
-            "106,851" in text
-            and "analysis-unit sensitivity" in text
-            and "logMS normalization" in text,
-            "complete-data wording present",
-        ),
-        (
-            "Authors and no-funding statement are present",
-            "Peng Zhi" in text
-            and "Xiaohe Yan" in text
-            and "Chaofan Zhang" in text
-            and "received no specific grant" in text,
-            "author metadata present",
-        ),
-        (
-            "v9 text does not use the v4 title",
-            "Donor-aware analysis-unit comparison reveals"
-            not in text,
-            "old title absent",
-        ),
+        ("主稿含 Fig. 1-8 图注", legend_numbers == list(range(1, 9)),
+         f"found {legend_numbers}"),
+        ("正文图引用顺序 1-8", figure_citations == list(range(1, 9)),
+         f"found {figure_citations}"),
+        (f"正文附加文件引用顺序 1-{N_ADDITIONAL_FILES}",
+         additional_citations == list(range(1, N_ADDITIONAL_FILES + 1)),
+         f"found {additional_citations}"),
+        (f"仓库含 {N_ADDITIONAL_FILES} 个 Additional file",
+         len(repo_files) == N_ADDITIONAL_FILES,
+         f"found {len(repo_files)}"),
+        ("仓库无旧 Table_S 命名残留", not leftover, f"leftover {leftover}"),
+        ("已删除的两个文件确已移除", not removed, f"still present {removed}"),
+        ("8 张 v5 主图存在", len(v5_figures) == 8,
+         f"found {len(v5_figures)}"),
+        ("BMC DOCX 有行号且无分页符", has_lines and no_page_break,
+         f"lines={has_lines}, no_break={no_page_break}"),
     ]
 
     lines = [
-        "# PAPPA2 submission consistency report v1",
+        "# PAPPA2 BMC submission consistency report",
         "",
-        "Date: 2026-09-30",
-        "",
-        "## Summary",
-        "",
-        f"- Figure legends: {legend_numbers}",
-        f"- Supplementary tables: S{table_numbers}",
-        f"- Supplementary figures: S{supplementary_figure_numbers}",
-        f"- v9 manuscript with v5 figure files: {len(v5_figures)}",
-        f"- v9 PDF pages: {page_count}",
-        "",
-        "## Checks",
+        f"Manuscript: `{MANUSCRIPT_MD.name}`",
         "",
         "| Check | Status | Detail |",
         "|---|---|---|",
     ]
     for label, passed, detail in checks:
-        lines.append(
-            f"| {label} | {'PASS' if passed else 'FAIL'} | {detail} |"
-        )
+        lines.append(f"| {label} | {'PASS' if passed else 'FAIL'} | {detail} |")
+    lines.extend(["", "## Additional files in repository", "", "```text"])
+    lines.extend(repo_files)
+    lines.extend(["```", ""])
 
-    lines.extend(
-        [
-            "",
-            "## v5 figure files",
-            "",
-            "```text",
-            *[path.name for path in v5_figures],
-            "```",
-            "",
-            "## Supplementary files",
-            "",
-            "```text",
-            *table_files,
-            *figure_s_files,
-            "```",
-        ]
-    )
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("Saved:", REPORT)
+
+    ok = True
     for label, passed, detail in checks:
-        print(
-            ("PASS" if passed else "FAIL"),
-            label,
-            detail,
-        )
+        ok = ok and passed
+        print(f"{'PASS' if passed else 'FAIL'}  {label}  -> {detail}")
+    print("报告：", REPORT)
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
