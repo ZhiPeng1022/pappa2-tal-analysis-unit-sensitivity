@@ -34,7 +34,8 @@ The analysis compares:
 5. within-donor cell-level rank analysis;
 6. KPMP eGFR association models;
 7. KPMP GSE183456 spatial cross-modality analysis;
-8. external public eGFR and Nephroseq association checks.
+8. external public eGFR and Nephroseq association checks;
+9. independent non-KPMP validation in GSE211785 and GSE254185.
 
 PAPPA2 is analyzed as a case gene. The study does not claim a new
 algorithm, software method, or causal mechanism.
@@ -45,6 +46,8 @@ algorithm, software method, or causal mechanism.
 |---|---|
 | KPMP snRNA-seq | GEO superseries `GSE183279`; snRNA component `GSE183277` |
 | KPMP Visium | GEO `GSE183456` |
+| Independent multi-omic validation | GEO `GSE211785`; non-KPMP object |
+| Independent injury validation | GEO `GSE254185` |
 | External public eGFR | GEO `GSE137570` |
 | External GFR associations | Nephroseq v5 |
 | Candidate external resource, not used | GEO `GSE115098` |
@@ -53,13 +56,36 @@ algorithm, software method, or causal mechanism.
 cohort. `GSE115098` was not used for external validation because
 sample-level GFR annotations are not publicly available.
 
+## Independent validation
+
+Release `v1.0.4` adds two non-KPMP human kidney validation resources.
+
+`GSE211785` contains C_TAL and M_TAL RNA annotations. After requiring at least
+five TAL cells per donor, 29,847 TAL cells from 35 donors were available
+(16 control, 7 DKD, and 12 HKD). PAPPA2 was higher in disease than control
+donors in C_TAL (+0.283; permutation p = 0.0315; six-test FDR = 0.063) and was
+directionally positive in M_TAL (+0.200; p = 0.105). Leave-one-donor-out
+estimates remained positive.
+
+`GSE254185` contains 9,912 annotated TAL cells from 7 normal and 5
+obstructive-nephropathy kidneys. PAPPA2 donor pseudobulk was positive in mTAL
+(+0.341; exact p = 0.0121; five-state FDR = 0.060) and in TAL Injured. In
+TAL Injured, neighborhood-expression and within-donor directions were negative,
+showing a qualitative cross-unit signal. The exact aTAL2 and frTAL labels were
+not available in either independent cohort.
+
+These analyses are independent-cohort validation, not experimental or causal
+validation. The detailed outputs are in `data/derived/independent_validation/`
+and the scripts are in `analysis/independent_validation/`.
+
 ## Directory structure
 
 ```text
 repo/
 ├─ data/
 │  └─ derived/
-│     ├─ supplementary/       # BMC additional files 1-13 (submission naming)
+│     ├─ supplementary/       # BMC additional files 1-14 (submission naming)
+│     ├─ independent_validation/  # GSE211785 and GSE254185 result tables
 │     └─ reanalysis/          # Full-data reanalysis and manifest summaries
 ├─ analysis/
 │  ├─ run_milo_tal_kpmp.R
@@ -78,7 +104,8 @@ repo/
 │  ├─ analyze_pappa2_egfr_adjusted.py
 │  ├─ analyze_egfr_gene_specificity.py
 │  ├─ analyze_gse137570_pappa2_egfr.py
-│  └─ query_nephroseq_gfr_genes.py
+│  ├─ query_nephroseq_gfr_genes.py
+│  └─ independent_validation/ # Non-KPMP validation scripts
 ├─ figures/
 │  ├─ make_figures_v2.py
 │  ├─ make_supplementary_figures.py
@@ -152,6 +179,10 @@ PAPPA2_PROJECT_ROOT
 PAPPA2_DATA_ROOT
 PAPPA2_OUTPUT_ROOT
 PAPPA2_WORK_ROOT
+PAPPA2_VALIDATION_DIR
+PAPPA2_VALIDATION_OUTPUT
+PAPPA2_VALIDATION_DATA
+GSE211785_H5AD
 ```
 
 `analysis/project_paths.py` resolves defaults relative to the repository.
