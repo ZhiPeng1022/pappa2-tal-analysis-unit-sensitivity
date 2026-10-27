@@ -1,0 +1,18 @@
+dataset,comparison,tal_state,analysis_unit,effect,nominal_p,fdr,n_case,n_control,n_centers,notes
+GSE211785,Disease_vs_Control,C_TAL,donor pseudobulk,0.282804,0.031498425078746,0.0629968501574921,19,16,,two-sided donor-label permutation
+GSE211785,DKD_vs_Control,C_TAL,donor pseudobulk,0.442884,0.0174491275436228,0.0629968501574921,7,16,,two-sided donor-label permutation
+GSE211785,HKD_vs_Control,C_TAL,donor pseudobulk,0.189425,0.1105444727763611,0.1326533673316334,12,16,,two-sided donor-label permutation
+GSE211785,Disease_vs_Control,M_TAL,donor pseudobulk,0.200196,0.1051947402629868,0.1326533673316334,17,12,,two-sided donor-label permutation
+GSE211785,DKD_vs_Control,M_TAL,donor pseudobulk,0.414303,0.0227309453272286,0.0629968501574921,6,12,,two-sided donor-label permutation
+GSE211785,HKD_vs_Control,M_TAL,donor pseudobulk,0.08341,0.2869856507174641,0.2869856507174641,11,12,,two-sided donor-label permutation
+GSE211785,Disease vs Control,C_TAL,"within-donor rank, injury score",-0.03261,0.6108194590270486,0.6108194590270486,15,14,,donor-level Spearman difference; two-sided permutation
+GSE211785,Disease vs Control,M_TAL,"within-donor rank, injury score",-0.051528,0.391630418479076,0.6108194590270486,10,7,,donor-level Spearman difference; two-sided permutation
+GSE211785,Disease vs Control,C_TAL,"within-donor rank, neighborhood logFC",-0.073735,0.1748912554372281,0.3497825108744563,15,14,,donor-level Spearman difference; two-sided permutation
+GSE211785,Disease vs Control,M_TAL,"within-donor rank, neighborhood logFC",0.014095,0.8618069096545172,0.8618069096545172,10,7,,donor-level Spearman difference; two-sided permutation
+GSE211785,Disease vs Control,C_TAL,neighborhood-expression association,0.188307,1.3658506767375549e-127,3.0048714888226213e-127,,,15996,descriptive; neighborhood centers overlap
+GSE211785,Disease vs Control,M_TAL,neighborhood-expression association,-0.002272,0.7891684700613335,0.7891684700613335,,,13851,descriptive; neighborhood centers overlap
+GSE254185,obstructive nephropathy vs normal,mTAL,donor pseudobulk,0.341228,0.0120845921450151,0.0604229607250755,4,7,,two-sided donor-label permutation
+GSE254185,obstructive nephropathy vs normal,TAL Injured,donor pseudobulk,0.167632,0.7105831533477321,0.7105831533477321,5,6,,two-sided donor-label permutation
+GSE254185,obstructive nephropathy vs normal,TAL Injured,"within-donor rank, injury score",-0.290368,0.0701754385964912,0.3508771929824561,5,3,,donor-level Spearman difference; two-sided permutation
+GSE254185,obstructive nephropathy vs normal,TAL Injured,"within-donor rank, neighborhood logFC",-0.061714,0.8245614035087719,0.9529411764705882,5,3,,donor-level Spearman difference; two-sided permutation
+GSE254185,obstructive nephropathy vs normal,TAL Injured,neighborhood-expression association,-0.095611,3.47069309048837e-05,7.069930369513346e-05,,,1869,descriptive; neighborhood centers overlap

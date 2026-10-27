@@ -12,14 +12,14 @@ authors:
   - family-names: Zhang
     given-names: Chaofan
     orcid: "https://orcid.org/0009-0009-9088-0016"
-version: "1.0.3"
-date-released: "2026-10-15"
+version: "1.0.4"
+date-released: "2026-10-28"
 repository-code: "https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity"
 abstract: >-
   Analysis code, curated derived tables, and generated figures for
   complete-data donor pseudobulk, Milo neighborhood, neighborhood-expression
-  association, within-donor cell-rank, and analysis-unit comparison in human
-  kidney thick ascending limb subtypes.
+  association, within-donor cell-rank, analysis-unit comparison, and independent
+  non-KPMP validation in human kidney thick ascending limb subtypes.
 keywords:
   - human kidney
   - thick ascending limb

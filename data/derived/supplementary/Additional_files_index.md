@@ -5,7 +5,7 @@ sensitivity in human kidney disease`
 
 Target journal: `BMC Medical Genomics`
 
-Date: 2026-10-15
+Date: 2026-10-28
 
 Repository: `https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity`
 
@@ -31,6 +31,7 @@ the main manuscript, as required by BMC.
 | `Additional file 11.csv` | .csv | KPMP ordinal eGFR models | Ordinal logistic estimates for PAPPA2-positive TAL fraction |
 | `Additional file 12.csv` | .csv | GSE137570 directional eGFR association | Unadjusted and adjusted association estimates |
 | `Additional file 13.csv` | .csv | Nephroseq precomputed GFR associations | Precomputed GFR results for PAPPA2 and four control genes |
+| `Additional file 14.csv` | .csv | Independent non-KPMP validation of PAPPA2 and analysis-unit direction | GSE211785 and GSE254185 effects, permutation p values, FDRs and donor counts |
 
 ## Diagnostic and reference files not submitted as additional files
 
@@ -68,3 +69,5 @@ thresholds) are already stated in the Methods section of the manuscript.
    combined disease comparison.
 6. Nephroseq rows are not independent cohorts.
 7. GSE183456 is a KPMP spatial resource, not an external cohort.
+8. GSE211785 and GSE254185 are non-KPMP independent cohorts; they do not
+   contain the exact aTAL2/frTAL discovery labels.
