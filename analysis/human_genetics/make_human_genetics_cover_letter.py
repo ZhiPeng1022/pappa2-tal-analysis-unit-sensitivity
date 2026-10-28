@@ -47,7 +47,9 @@ SECTIONS = [
         "biological quantity is being estimated. A donor-level decomposition "
         "showed that the overall PAPPA2 difference was mainly a "
         "subtype-expression effect (+0.641) rather than a subtype-composition "
-        "effect (+0.010).",
+        "effect (+0.010). In a separate prespecified 400-gene panel, "
+        "donor-versus-within reversal occurred in 18.6% of target genes versus "
+        "12.7% of expression-matched random sets (empirical P = 0.000999).",
     ),
     (
         "Independent support. ",

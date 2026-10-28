@@ -46,6 +46,7 @@ The analysis compares:
 11. NephQTL2 kidney tubulointerstitial eQTL context;
 12. GSE211785 snATAC gene-activity boundary analysis;
 13. donor-level composition and expression decomposition.
+14. prespecified 400-gene analysis-unit panel with matched random controls.
 
 PAPPA2 is analyzed as a case gene. The study does not claim a new
 algorithm, software method, or causal mechanism.
@@ -122,7 +123,9 @@ repo/
 │     ├─ signature_transfer/  # Donor-stratified marker transfer summaries
 │     ├─ regulatory_support/  # NephQTL2 eQTL and GSE211785 snATAC results
 │     ├─ composition_expression/  # Donor-level decomposition
-│     ├─ human_genetics_supplementary/  # Supplementary Tables S1-S20
+│     ├─ prespecified_unit_panel/ # Frozen panel and control pool
+│     ├─ prespecified_unit_panel_results/  # Unit metrics and random tests
+│     ├─ human_genetics_supplementary/  # Supplementary Tables S1-S23
 │     └─ reanalysis/          # Full-data reanalysis and manifest summaries
 ├─ analysis/
 │  ├─ run_milo_tal_kpmp.R
@@ -143,7 +146,7 @@ repo/
 │  ├─ analyze_gse137570_pappa2_egfr.py
 │  ├─ query_nephroseq_gfr_genes.py
 │  ├─ independent_validation/ # Non-KPMP validation scripts
-│  └─ human_genetics/         # Signature transfer, eQTL, decomposition scripts
+│  └─ human_genetics/         # Signature transfer, panel, eQTL, decomposition
 ├─ figures/
 │  ├─ make_figures_v2.py
 │  ├─ make_supplementary_figures.py
@@ -205,6 +208,19 @@ https://doi.org/10.5281/zenodo.23733571
 ```
 
 No analysis results changed in this release.
+
+## Release v1.0.7: prespecified analysis-unit panel
+
+Release `v1.0.7` adds the frozen 400-gene panel and its 2,000-gene
+expression-matched negative-control pool.
+
+The donor-versus-within reversal fraction was 18.6% in the target panel versus
+12.7% in random sets (empirical P = 0.000999). The biological-gene subset
+showed 20.7% reversal. Internal negative controls matched the external control
+distribution (12.3% versus 12.6%). The result remained significant in the
+expression-stratified sensitivity analysis.
+
+Supplementary Tables S21-S23 and Supplementary Fig. S1 support this analysis.
 
 ## Software
 

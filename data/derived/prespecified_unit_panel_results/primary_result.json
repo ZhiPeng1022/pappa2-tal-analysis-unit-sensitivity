@@ -1,0 +1,37 @@
+{
+  "target_panel_size": 400,
+  "random_sets": 1000,
+  "donor_within": {
+    "target_400_mean": 0.18569444444444444,
+    "random_400_mean": 0.12684965277777777,
+    "empirical_p_400": 0.000999000999000999,
+    "target_300_biological_mean": 0.2065740740740741,
+    "random_300_mean": 0.12699231481481482,
+    "empirical_p_300": 0.000999000999000999,
+    "stratified_400_mean": 0.12771736111111112,
+    "empirical_p_stratified_400": 0.000999000999000999
+  },
+  "donor_neighborhood": {
+    "target_400_mean": 0.22055555555555556,
+    "random_400_mean": 0.1431273611111111,
+    "empirical_p_400": 0.000999000999000999,
+    "target_300_biological_mean": 0.2437962962962963,
+    "random_300_mean": 0.14344074074074073,
+    "empirical_p_300": 0.000999000999000999,
+    "stratified_400_mean": 0.14397027777777777,
+    "empirical_p_stratified_400": 0.000999000999000999
+  },
+  "neighborhood_within": {
+    "target_400_mean": 0.2011111111111111,
+    "random_400_mean": 0.19450319444444444,
+    "empirical_p_400": 0.09490509490509491,
+    "target_300_biological_mean": 0.19768518518518516,
+    "random_300_mean": 0.19453870370370374,
+    "empirical_p_300": 0.2987012987012987,
+    "stratified_400_mean": 0.19370381944444443,
+    "empirical_p_stratified_400": 0.07092907092907093
+  },
+  "panel_sha256": "d4942c72ed3596ddfa00f312c403e3e56d412d2aed9ad6e6501e03967ad0a4bf",
+  "primary_endpoint": "donor_within",
+  "z_threshold": 0.5
+}

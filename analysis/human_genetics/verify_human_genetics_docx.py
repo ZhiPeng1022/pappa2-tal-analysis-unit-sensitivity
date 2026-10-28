@@ -50,9 +50,9 @@ def main() -> None:
         "eight_figures": all(
             f"Fig. {number}" in text for number in range(1, 9)
         ),
-        "supplementary_tables_s1_s20": all(
+        "supplementary_tables_s1_s23": all(
             f"Supplementary Table S{number}" in text
-            for number in range(1, 21)
+            for number in range(1, 24)
         ),
         "no_additional_file_terms": (
             "Additional file" not in text
