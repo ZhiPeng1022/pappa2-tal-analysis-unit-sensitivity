@@ -106,10 +106,11 @@ def main() -> None:
 
     if "Additional file" in text or "Additional files" in text:
         errors.append("BMC Additional file terminology remains")
-    if "10.5281/zenodo.23733571" not in text:
+    if "10.5281/zenodo.23734944" not in text:
         errors.append("Final exact-version Zenodo DOI is missing")
-    if "23698349" in text:
-        errors.append("Old working Zenodo DOI remains")
+    for old_doi in ["23698349", "23733571", "23733718"]:
+        if old_doi in text:
+            errors.append(f"Old Zenodo DOI remains: {old_doi}")
 
     for number in range(1, 24):
         label = f"Supplementary Table S{number}"

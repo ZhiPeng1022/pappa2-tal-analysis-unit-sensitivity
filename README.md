@@ -15,7 +15,7 @@ https://doi.org/10.5281/zenodo.23196128
 Zenodo exact DOI for the analyses and Human Genetics package:
 
 ```text
-https://doi.org/10.5281/zenodo.23733571
+https://doi.org/10.5281/zenodo.23734944
 ```
 
 Analysis code for the manuscript:
@@ -194,9 +194,10 @@ already reported in the Methods section of the manuscript.
 The Human Genetics Research Article working files are in
 `manuscript/human_genetics/`. The main DOCX is the editable manuscript, the
 PDF is the review copy, and the TXT source is the Markdown file. The submission
-package contains eight TIFF figures and Supplementary Tables S1-S20.
+package contains eight TIFF figures, Supplementary Fig. S1, and Supplementary
+Tables S1-S23.
 
-The final manuscript cites `https://doi.org/10.5281/zenodo.23733571`.
+The final manuscript cites `https://doi.org/10.5281/zenodo.23734944`.
 
 ## Release v1.0.6: final DOI binding
 
@@ -221,6 +222,17 @@ distribution (12.3% versus 12.6%). The result remained significant in the
 expression-stratified sensitivity analysis.
 
 Supplementary Tables S21-S23 and Supplementary Fig. S1 support this analysis.
+
+## Release v1.0.8: final analysis DOI binding
+
+Release `v1.0.8` updates the manuscript and repository metadata to cite the
+exact `v1.0.7` analysis archive:
+
+```text
+https://doi.org/10.5281/zenodo.23734944
+```
+
+No analysis results changed in this release.
 
 ## Software
 

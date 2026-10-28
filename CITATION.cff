@@ -12,7 +12,7 @@ authors:
   - family-names: Zhang
     given-names: Chaofan
     orcid: "https://orcid.org/0009-0009-9088-0016"
-version: "1.0.7"
+version: "1.0.8"
 date-released: "2026-10-28"
 repository-code: "https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity"
 abstract: >-
@@ -31,7 +31,7 @@ keywords:
   - analysis-unit sensitivity
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23733571"
+    value: "10.5281/zenodo.23734944"
     description: "Exact archived version containing the Human Genetics analyses"
   - type: doi
     value: "10.5281/zenodo.23196128"
