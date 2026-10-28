@@ -1,4 +1,4 @@
-# PAPPA2 TAL analysis-unit sensitivity analysis
+# PAPPA2 TAL analysis-unit sensitivity and Human Genetics Research Article archive
 
 Public code and derived-data repository:
 
@@ -15,8 +15,8 @@ https://doi.org/10.5281/zenodo.23196128
 Analysis code for the manuscript:
 
 ```text
-Subtype-specific thick ascending limb states and analysis-unit
-sensitivity in human kidney disease
+Analysis-unit sensitivity distinguishes donor-level expression enrichment
+from within-donor coupling in human kidney thick ascending limb states
 ```
 
 ## Overview
@@ -35,7 +35,11 @@ The analysis compares:
 6. KPMP eGFR association models;
 7. KPMP GSE183456 spatial cross-modality analysis;
 8. external public eGFR and Nephroseq association checks;
-9. independent non-KPMP validation in GSE211785 and GSE254185.
+9. independent non-KPMP validation in GSE211785 and GSE254185;
+10. donor-stratified TAL signature transfer;
+11. NephQTL2 kidney tubulointerstitial eQTL context;
+12. GSE211785 snATAC gene-activity boundary analysis;
+13. donor-level composition and expression decomposition.
 
 PAPPA2 is analyzed as a case gene. The study does not claim a new
 algorithm, software method, or causal mechanism.
@@ -78,6 +82,29 @@ These analyses are independent-cohort validation, not experimental or causal
 validation. The detailed outputs are in `data/derived/independent_validation/`
 and the scripts are in `analysis/independent_validation/`.
 
+## Release v1.0.5: Human Genetics Research Article candidate
+
+Release `v1.0.5` adds the Research Article working manuscript, Human Genetics
+cover letter, 20 supplementary tables, eight submission TIFF figures, and the
+new donor-stratified signature-transfer and kidney-regulatory analyses.
+
+The signature-transfer analysis trains on 156 KPMP donors, tests on 67
+held-out donors, and recovers an aTAL2-like state in GSE211785 and GSE254185.
+The external data support a donor-level direction but do not provide exact
+aTAL2 label replication or a significant within-donor effect.
+
+NephQTL2 identifies PAPPA2 as a strong tubulointerstitial eGene
+(FDR = 1.64e-14) without glomerular eQTL support. PAPPA2 is not among the
+FDR-significant PTWAS genes, and GSE211785 snATAC does not show higher disease
+accessibility. These results are retained as a regulatory-context and boundary
+analysis.
+
+The donor-level decomposition shows that the overall four-subtype TAL PAPPA2
+difference is dominated by subtype expression rather than subtype composition.
+In the combined disease comparison, the observed difference is +0.563, the
+expression component is +0.641, the composition component is +0.010, and the
+interaction/covariance term is -0.088.
+
 ## Directory structure
 
 ```text
@@ -86,6 +113,10 @@ repo/
 │  └─ derived/
 │     ├─ supplementary/       # BMC additional files 1-14 (submission naming)
 │     ├─ independent_validation/  # GSE211785 and GSE254185 result tables
+│     ├─ signature_transfer/  # Donor-stratified marker transfer summaries
+│     ├─ regulatory_support/  # NephQTL2 eQTL and GSE211785 snATAC results
+│     ├─ composition_expression/  # Donor-level decomposition
+│     ├─ human_genetics_supplementary/  # Supplementary Tables S1-S20
 │     └─ reanalysis/          # Full-data reanalysis and manifest summaries
 ├─ analysis/
 │  ├─ run_milo_tal_kpmp.R
@@ -105,13 +136,15 @@ repo/
 │  ├─ analyze_egfr_gene_specificity.py
 │  ├─ analyze_gse137570_pappa2_egfr.py
 │  ├─ query_nephroseq_gfr_genes.py
-│  └─ independent_validation/ # Non-KPMP validation scripts
+│  ├─ independent_validation/ # Non-KPMP validation scripts
+│  └─ human_genetics/         # Signature transfer, eQTL, decomposition scripts
 ├─ figures/
 │  ├─ make_figures_v2.py
 │  ├─ make_supplementary_figures.py
 │  ├─ check_figures.py
 │  └─ generated/              # Final figure PNG files
 ├─ manuscript/
+│  ├─ human_genetics/         # Research Article manuscript and cover letter
 │  ├─ build_manuscript_evidence_matrix.py
 │  ├─ search_refs.py
 │  ├─ verify_refs.py
@@ -147,6 +180,17 @@ schematic (500 donor-stratified resamples, purity-adjusted partial
 correlation, 1,000 within-donor permutations, 3/5/10 cell thresholds) are
 already reported in the Methods section of the manuscript.
 
+## Submission files (Human Genetics)
+
+The Human Genetics Research Article working files are in
+`manuscript/human_genetics/`. The main DOCX is the editable manuscript, the
+PDF is the review copy, and the TXT source is the Markdown file. The submission
+package contains eight TIFF figures and Supplementary Tables S1-S20.
+
+The current manuscript uses a working archive citation because the new
+signature-transfer and regulatory analyses require a new exact-version
+archive. Replace the working archive DOI after the release is archived.
+
 ## Software
 
 Python packages and versions are listed in `requirements.txt`. The Milo
@@ -169,6 +213,9 @@ analysis used R 4.6.1 and `miloR` 2.8.1, with
 | Cell thresholds | 3, 5, 10 |
 | Primary cell threshold | 5 |
 | Milo threshold | `SpatialFDR < 0.05` |
+| Signature high-confidence margin | 0.2 |
+| Signature bootstrap / permutation cap | 20,000 |
+| Decomposition bootstrap resamples | 2,000 |
 
 ## Path configuration
 

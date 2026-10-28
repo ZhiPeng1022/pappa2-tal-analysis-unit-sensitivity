@@ -1,0 +1,2 @@
+ensembl_id,gene,glom_fdr,glom_egene,glom_model_size,tube_fdr,tube_egene,tube_model_size
+ENSG00000116183,PAPPA2,0.525747999252296,0.0,0.138,1.64075512915022e-14,1.0,1.035

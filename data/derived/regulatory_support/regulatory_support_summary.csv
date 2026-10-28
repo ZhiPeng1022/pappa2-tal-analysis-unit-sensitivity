@@ -1,0 +1,4 @@
+module,analysis_unit,result,effect_or_fdr,interpretation
+NephQTL2_eQTL,tubulointerstitial_eGene,1.0,1.64075512915022e-14,PAPPA2 is a significant TUBE eGene; GLOM is negative
+GSE211785_snATAC,C_TAL_donor_pseudobulk,-0.029346289379256207,1.0,"Chromatin-accessibility proxy; same-cohort orthogonal modality, not an independent cohort"
+GSE211785_snATAC,M_TAL_donor_pseudobulk,-0.016304842063358804,1.0,"Chromatin-accessibility proxy; same-cohort orthogonal modality, not an independent cohort"

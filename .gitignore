@@ -33,6 +33,8 @@ results/
 figures/*
 !figures/generated/
 !figures/generated/**
+!figures/human_genetics/
+!figures/human_genetics/**
 
 # OS and editor files
 .DS_Store
