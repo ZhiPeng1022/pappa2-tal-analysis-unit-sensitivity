@@ -1,7 +1,7 @@
 {
-  "title": "Complete-data analysis-unit sensitivity in human kidney thick ascending limb states",
+  "title": "Analysis-unit sensitivity distinguishes donor-level expression enrichment from within-donor coupling in human kidney thick ascending limb states",
   "upload_type": "software",
-  "description": "Analysis code, curated derived tables, and generated figures for donor pseudobulk, Milo neighborhood, neighborhood-expression association, within-donor cell-rank, analysis-unit comparison, and independent non-KPMP validation in human kidney thick ascending limb subtypes.",
+  "description": "Analysis code, curated derived tables, manuscript and figures for donor pseudobulk, Milo neighborhood, neighborhood-expression association, within-donor cell-rank, donor-stratified TAL signature transfer, NephQTL2 kidney eQTL context, GSE211785 snATAC context, composition-expression decomposition, and independent non-KPMP validation in human kidney thick ascending limb subtypes.",
   "creators": [
     {
       "name": "Zhi, Peng",
@@ -23,7 +23,7 @@
     "Milo",
     "analysis-unit sensitivity"
   ],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publication_date": "2026-10-28",
   "access_right": "open"
 }
