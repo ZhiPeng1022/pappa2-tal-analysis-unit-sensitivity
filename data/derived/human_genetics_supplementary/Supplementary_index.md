@@ -161,3 +161,27 @@ Composition and expression decomposition
 File: `Supplementary_Table_S20.csv`
 
 SHA256: `7f98997271144f479cf7be5047311bfe7c18a4349dd2f56473634adebf8250b9`
+
+## Supplementary Table S21
+
+Prespecified 400-gene panel and matched control pool
+
+File: `Supplementary_Table_S21.csv`
+
+SHA256: `255cd44903a997c009a8fb37f4ca503248b7946403931ab1bc89a3b2fd28dc7d`
+
+## Supplementary Table S22
+
+Gene-level analysis-unit metrics
+
+File: `Supplementary_Table_S22.csv`
+
+SHA256: `aecea6e49bb38345ea7deb204795e3bc54a5b759d388ee267f517d731913f1cd`
+
+## Supplementary Table S23
+
+Random-set analysis-unit sensitivity results
+
+File: `Supplementary_Table_S23.csv`
+
+SHA256: `78fc41dc6c51cf145fe3f9dbbb7774329ddbb01f9bb617d516fd4fe26bed57ac`

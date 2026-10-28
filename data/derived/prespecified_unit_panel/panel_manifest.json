@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-28",
+  "seed": 20261028,
+  "tal_cells": 106851,
+  "train_donors": 156,
+  "test_donors": 67,
+  "target_panel_size": 400,
+  "negative_control_pool_size": 2000,
+  "target_panel_sha256": "d4942c72ed3596ddfa00f312c403e3e56d412d2aed9ad6e6501e03967ad0a4bf",
+  "group_counts": {
+    "tal_subtype_marker": 100,
+    "injury_inflammation_metabolism": 100,
+    "pappa2_coexpression": 100,
+    "internal_negative_control": 100
+  },
+  "hallmark_sets": [
+    "Epithelial Mesenchymal Transition",
+    "Hypoxia",
+    "Inflammatory Response",
+    "Oxidative Phosphorylation",
+    "TNF-alpha Signaling via NF-kB"
+  ]
+}

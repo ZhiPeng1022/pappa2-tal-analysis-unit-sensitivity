@@ -41,6 +41,9 @@ TITLES = {
     18: "NephQTL2 gene-level eQTL results for PAPPA2 and fixed markers",
     19: "GSE211785 snATAC gene-activity analysis",
     20: "Composition and expression decomposition",
+    21: "Prespecified 400-gene panel and matched control pool",
+    22: "Gene-level analysis-unit metrics",
+    23: "Random-set analysis-unit sensitivity results",
 }
 
 
@@ -92,6 +95,44 @@ def build_s20() -> Path:
     destination = OUT_DIR / "Supplementary_Table_S20.csv"
     combined.to_csv(destination, index=False)
     return destination
+
+
+def build_s21() -> Path:
+    panel = pd.read_csv(
+        ROOT / "outputs" / "prespecified_unit_panel" / "target_panel_400.csv"
+    )
+    controls = pd.read_csv(
+        ROOT
+        / "outputs"
+        / "prespecified_unit_panel"
+        / "negative_control_pool_2000.csv"
+    )
+    panel.insert(0, "record_type", "target_panel")
+    controls.insert(0, "record_type", "external_control_pool")
+    combined = pd.concat([panel, controls], ignore_index=True, sort=False)
+    destination = OUT_DIR / "Supplementary_Table_S21.csv"
+    combined.to_csv(destination, index=False)
+    return destination
+
+
+def build_s22() -> Path:
+    return copy_table(
+        ROOT
+        / "outputs"
+        / "prespecified_unit_panel_results"
+        / "gene_unit_metrics_long.csv",
+        22,
+    )
+
+
+def build_s23() -> Path:
+    return copy_table(
+        ROOT
+        / "outputs"
+        / "prespecified_unit_panel_results"
+        / "random_set_results.csv",
+        23,
+    )
 
 
 def build_s17() -> Path:
@@ -185,6 +226,9 @@ def main() -> None:
         19,
     )
     files[20] = build_s20()
+    files[21] = build_s21()
+    files[22] = build_s22()
+    files[23] = build_s23()
 
     manifest_rows = []
     index_lines = [
@@ -193,7 +237,7 @@ def main() -> None:
         "All files are comma-separated values (.csv).",
         "",
     ]
-    for number in range(1, 21):
+    for number in range(1, 24):
         path = files[number]
         digest = sha256(path)
         manifest_rows.append(

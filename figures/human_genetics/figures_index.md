@@ -13,6 +13,7 @@ All figures are 300 dpi. Upload the **TIFF** files (LZW lossless compression,
 | `Fig6.tif` | `Fig6.png` | aTAL2 and frTAL cross-unit discordance |
 | `Fig7.tif` | `Fig7.png` | Internal robustness of complete TAL pseudobulk effects |
 | `Fig8.tif` | `Fig8.png` | Subtype-specific TAL state model |
+| `Figure_S1_panel_validation.tif` | `Figure_S1_panel_validation.png` | Prespecified 400-gene analysis-unit panel validation (supplementary) |
 
 ## Notes
 

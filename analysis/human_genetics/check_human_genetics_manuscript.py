@@ -111,10 +111,12 @@ def main() -> None:
     if "23698349" in text:
         errors.append("Old working Zenodo DOI remains")
 
-    for number in range(1, 21):
+    for number in range(1, 24):
         label = f"Supplementary Table S{number}"
         if text.count(label) < 1:
             errors.append(f"Missing {label}")
+    if "Supplementary Fig. S1" not in text:
+        errors.append("Missing Supplementary Fig. S1")
 
     heading_levels = [
         len(match.group(1))

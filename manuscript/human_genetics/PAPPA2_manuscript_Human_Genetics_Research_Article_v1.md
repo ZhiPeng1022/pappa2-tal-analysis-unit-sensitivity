@@ -23,19 +23,19 @@ whether these analysis units lead to the same subtype-level conclusion in the
 human thick ascending limb (TAL). We analyzed 106,851 KPMP single-nucleus TAL
 cells from 223 donors and compared donor pseudobulk, Milo neighborhood
 abundance, neighborhood-expression association, and within-donor cell-rank
-association across C-TAL-A, C-TAL-B, aTAL2, and frTAL. Stability was assessed
-with donor-aware models, leave-one-donor analysis, bootstrap, and
-cortex/medulla stratification. Key directions were tested in GSE211785 and
-GSE254185, two non-KPMP kidney resources. We also performed donor-stratified
-signature transfer and evaluated kidney tubulointerstitial eQTL and snATAC
-context. Complete and subset pseudobulk directions agreed in 48/60
+association across C-TAL-A, C-TAL-B, aTAL2, and frTAL. Key directions were
+tested in GSE211785 and GSE254185, two non-KPMP kidney resources. Donor-stratified
+signature transfer and kidney tubulointerstitial eQTL and snATAC context were
+also evaluated. Complete and subset pseudobulk directions agreed in 48/60
 comparisons, but 12 changed direction. In aTAL2, donor pseudobulk and
 neighborhood-expression association were positive, whereas the within-donor
 association was negative in combined disease and AKI (FDR = 0.0086 for each).
-frTAL showed a weaker related pattern. Signature transfer achieved 93.9%
-accuracy among assigned held-out cells and 93.9% aTAL2 recall. Both external
-cohorts supported donor-level PAPPA2 disease elevation, but within-donor
-negative estimates were underpowered. PAPPA2 was a strong kidney
+In a prespecified 400-gene panel, donor-within reversal exceeded
+expression-matched random sets (18.6% versus 12.7%; empirical
+P = 0.000999). Signature transfer achieved 93.9% accuracy among assigned
+held-out cells and 93.9% aTAL2 recall. Both external cohorts supported
+donor-level PAPPA2 disease elevation, but within-donor negative estimates were
+underpowered. PAPPA2 was a strong kidney
 tubulointerstitial eGene (FDR = 1.64e-14) without glomerular eQTL support,
 whereas same-cohort snATAC did not show higher disease accessibility.
 Decomposition attributed the overall PAPPA2 difference mainly to subtype
@@ -237,6 +237,24 @@ pseudobulk analysis after removing one donor at a time, resampling donors
 within condition strata, adjusting for age and sex, and stratifying by cortex
 or medulla. These analyses were treated as stability checks and not as
 additional discovery units.
+
+### Prespecified 400-gene analysis-unit panel
+
+A 400-gene panel was frozen before the panel outcome analysis. The panel
+contained 100 TAL subtype markers, 100 MSigDB Hallmark injury, inflammatory,
+hypoxic, or metabolic genes, 100 genes coexpressed with PAPPA2 in the 156
+training donors, and 100 internal expression-matched negative controls. A
+separate 2,000-gene pool was matched to the target expression and detection
+distribution and used to generate 1,000 random 400-gene sets.
+
+Only the three gene-specific units were compared across this panel: donor
+pseudobulk, neighborhood-expression association, and within-donor cell-rank
+association. A reversal required opposite signs and absolute standardized
+effects of at least 0.5 in both units. The primary endpoint was the
+donor-versus-within reversal fraction. One-sided empirical P values compared
+the target panel with the random sets. An expression-stratified random-set
+analysis was performed as a sensitivity check. The target-panel hash and
+frozen definitions are provided in Supplementary Table S21.
 
 ### KPMP eGFR analysis
 
@@ -441,6 +459,29 @@ The units differed in what they measured and did not always support one shared d
 within-donor cell-rank association were therefore analyzed as distinct units
 rather than as interchangeable estimates of the same quantity. This difference
 was clearest in aTAL2 and was also present in a weaker form in frTAL.
+
+### Analysis-unit reversal was enriched in the prespecified TAL gene panel
+
+The donor-versus-within reversal fraction was 18.6% in the 400-gene target
+panel, compared with 12.7% in expression-matched random sets (empirical
+P = 0.000999, the minimum attainable value with 1,000 sets). Restricting to the
+300 biological genes increased the fraction to 20.7% versus 12.7%. An
+expression-stratified sensitivity analysis gave the same result (18.6% versus
+12.8%; empirical P = 0.000999).
+
+The panel result was not driven by the internal negative controls. Their
+donor-versus-within reversal fraction was 12.3%, statistically
+indistinguishable from random 100-gene sets from the external control pool
+(12.6%; two-sided empirical P = 0.825). Reversal fractions differed across
+biological groups: 25.1% for PAPPA2 coexpression genes, 21.1% for TAL subtype
+markers, and 15.8% for injury, inflammatory, and metabolic genes.
+
+Donor-versus-neighborhood reversal was also enriched (22.1% versus 14.3%;
+empirical P = 0.000999). In contrast, neighborhood-versus-within reversal was
+not significantly enriched (20.1% versus 19.5%; empirical P = 0.0949).
+Individual gene metrics and random-set results are provided in Supplementary
+Tables S22 and S23 and Supplementary Fig. S1. The analysis therefore supports
+a panel-level phenomenon, not a claim that every selected gene is robust.
 
 ### aTAL2 showed the strongest cross-unit discordance
 
@@ -699,6 +740,22 @@ automatically justified. The central advance is therefore not a new molecular
 mechanism, but a sharper framework for deciding what a single-cell disease
 association does and does not represent.
 
+### The analysis-unit effect extends beyond the PAPPA2 case
+
+The prespecified 400-gene panel addresses the principal generalizability
+limitation of a single-gene study. Reversal between donor pseudobulk and
+within-donor coupling was nearly 50% more frequent in biologically selected
+TAL genes than in expression-matched controls (18.6% versus 12.7%). The result
+persisted after expression stratification and was strongest for
+PAPPA2-coexpressed genes and TAL subtype markers. Internal negative controls
+were statistically indistinguishable from the external control pool.
+
+The pattern was not universal. Injury, inflammatory, and metabolic genes showed
+a smaller excess, and neighborhood-versus-within reversal did not differ
+significantly from matched sets. The appropriate conclusion is therefore a
+panel-level phenomenon with graded biological groups, not a claim that all TAL
+genes are unstable or that every individual reversal is biologically meaningful.
+
 ### aTAL2 and frTAL show why analysis units cannot be merged
 
 aTAL2 provides the strongest evidence that average disease elevation and
@@ -889,7 +946,10 @@ cell-rank association were not interchangeable: they yielded different
 subtype-level conclusions, with aTAL2 as the strongest cross-unit discordance
 example and frTAL as a weaker related pattern. Complete TAL coverage also
 changed selected gene and subtype conclusions relative to the smaller
-derivative matrix. PAPPA2 acts as a case gene with directionally consistent
+derivative matrix. A prespecified 400-gene panel showed that
+donor-versus-within reversal was more frequent in biologically selected TAL
+genes than in expression-matched controls, while internal negative controls
+matched the external control distribution. PAPPA2 acts as a case gene with directionally consistent
 disease association across subtypes. Its donor-level disease elevation was
 independently supported in GSE211785, and an injured-TAL cross-unit signal was
 observed in GSE254185. Donor-stratified signature transfer reproduced the
@@ -946,6 +1006,8 @@ LODO: leave-one-donor-out
 M_TAL: medullary thick ascending limb label in GSE211785
 
 MR: Mendelian randomization
+
+MSigDB: Molecular Signatures Database
 
 NephQTL2: human kidney eQTL resource
 
@@ -1031,7 +1093,7 @@ License: Creative Commons Attribution 4.0 International (CC BY 4.0)
 Any restrictions to use by non-academics: none
 
 The processed analysis tables supporting the conclusions of this article are
-included in Supplementary Tables S1-S20.
+included in Supplementary Tables S1-S23.
 
 ### Code availability
 
@@ -1160,6 +1222,28 @@ Composition and expression decomposition. Description: Overall TAL
 contribution, subtype-expression component, subtype-composition component,
 interaction/covariance remainder, donor-bootstrap intervals, and subtype-level
 contributions for PAPPA2 and control genes.
+
+Supplementary Table S21. File format: Comma-separated values (.csv). Title:
+Prespecified 400-gene panel and matched control pool. Description: Group
+assignment, selection rank, expression, and detection statistics for the
+target panel and the 2,000-gene external negative-control pool.
+
+Supplementary Table S22. File format: Comma-separated values (.csv). Title:
+Gene-level analysis-unit metrics. Description: Donor pseudobulk,
+neighborhood-expression, and within-donor effects with validity flags and
+standardized reversal indicators for all panel and control genes.
+
+Supplementary Table S23. File format: Comma-separated values (.csv). Title:
+Random-set analysis-unit sensitivity results. Description: Gene-level reversal
+fractions for 1,000 random 400-gene and 300-gene sets from the expression-matched
+negative-control pool, including expression-stratified sensitivity sets.
+
+Supplementary Fig. S1. File format: Tagged Image File Format (.tif). Title:
+Prespecified analysis-unit panel validation. Description: a, Random-set null
+distribution for donor-within reversal with the 400-gene target and 300-gene
+biological-panel values. b, Donor-within reversal by panel group. c, Target
+versus expression-stratified random sets for the three gene-specific unit
+pairs, with empirical P values.
 
 ## References
 
