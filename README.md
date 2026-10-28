@@ -12,6 +12,12 @@ Zenodo concept DOI:
 https://doi.org/10.5281/zenodo.23196128
 ```
 
+Zenodo exact DOI for the analyses and Human Genetics package:
+
+```text
+https://doi.org/10.5281/zenodo.23733571
+```
+
 Analysis code for the manuscript:
 
 ```text
@@ -187,9 +193,18 @@ The Human Genetics Research Article working files are in
 PDF is the review copy, and the TXT source is the Markdown file. The submission
 package contains eight TIFF figures and Supplementary Tables S1-S20.
 
-The current manuscript uses a working archive citation because the new
-signature-transfer and regulatory analyses require a new exact-version
-archive. Replace the working archive DOI after the release is archived.
+The final manuscript cites `https://doi.org/10.5281/zenodo.23733571`.
+
+## Release v1.0.6: final DOI binding
+
+Release `v1.0.6` updates the manuscript, repository metadata, and citation
+files to cite the exact `v1.0.5` archive:
+
+```text
+https://doi.org/10.5281/zenodo.23733571
+```
+
+No analysis results changed in this release.
 
 ## Software
 

@@ -1018,7 +1018,7 @@ Project name: pappa2-tal-analysis-unit-sensitivity
 Project home page:
 https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity
 
-Archived version: https://doi.org/10.5281/zenodo.23698349
+Archived version: https://doi.org/10.5281/zenodo.23733571
 
 Operating system(s): Platform independent
 
@@ -1037,9 +1037,9 @@ included in Supplementary Tables S1-S20.
 
 Analysis code is available at
 https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity. The
-versioned archive is available at https://doi.org/10.5281/zenodo.23698349.
-The archive identifier will be updated after the final version containing the
-signature-transfer and regulatory analyses is released.
+versioned archive containing the signature-transfer, regulatory-support, and
+composition-expression analyses is available at
+https://doi.org/10.5281/zenodo.23733571.
 
 ### Competing interests
 
