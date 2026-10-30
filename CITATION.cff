@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the associated manuscript and archived release."
-title: "Analysis-unit sensitivity distinguishes donor-level expression enrichment from within-donor coupling in human kidney thick ascending limb states"
+title: "Unit-aware analysis reveals opposing donor and within-donor disease signals in human kidney single-cell data"
 type: software
 authors:
   - family-names: Zhi
@@ -12,27 +12,26 @@ authors:
   - family-names: Zhang
     given-names: Chaofan
     orcid: "https://orcid.org/0009-0009-9088-0016"
-version: "1.0.8"
-date-released: "2026-10-28"
+version: "1.0.9"
+date-released: "2026-10-29"
 repository-code: "https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity"
 abstract: >-
   Analysis code, curated derived tables, and generated figures for
   complete-data donor pseudobulk, Milo neighborhood, neighborhood-expression
   association, within-donor cell-rank, donor-stratified signature transfer,
-  kidney eQTL and snATAC context, composition-expression decomposition, and
-  independent non-KPMP validation, and a prespecified 400-gene
-  analysis-unit sensitivity panel in human kidney thick ascending limb
-  subtypes.
+  kidney eQTL and snATAC context, composition-expression decomposition,
+  independent non-KPMP validation, a prespecified 400-gene analysis-unit
+  sensitivity panel, a reusable unitaware Python package, and effect-aware
+  conditional-null calibration in human kidney thick ascending limb subtypes.
 keywords:
   - human kidney
   - thick ascending limb
   - single-nucleus RNA sequencing
   - Milo
   - analysis-unit sensitivity
+  - single-cell genomics
+  - reproducible software
 identifiers:
-  - type: doi
-    value: "10.5281/zenodo.23734944"
-    description: "Exact archived version containing the Human Genetics analyses"
   - type: doi
     value: "10.5281/zenodo.23196128"
     description: "Zenodo concept DOI for all archived versions"

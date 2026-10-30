@@ -35,6 +35,8 @@ figures/*
 !figures/generated/**
 !figures/human_genetics/
 !figures/human_genetics/**
+!figures/genome_medicine/
+!figures/genome_medicine/**
 
 # OS and editor files
 .DS_Store

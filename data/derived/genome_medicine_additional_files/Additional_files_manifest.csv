@@ -1,0 +1,30 @@
+file,title,format,bytes,sha256
+Additional file 1,Permutation null distributions for the within-donor cell-rank analysis,comma-separated values (.csv),15882398,09e68295697e600fcf3109517cbffaa46ee96c4d80d36653732b13fcb54576db
+Additional file 2,Complete-data Milo neighborhood summary,comma-separated values (.csv),1295,a26661ed5e91a04c5f70f5fbdab076f2e33d2bc98d4dc3ace97fcd06cdf72ed9
+Additional file 3,Subset-level Augur separability summary,comma-separated values (.csv),1278,841950a51f9e16aa6b1976db1aa85fe2c651b592695c284e48d2ed1355b0fcfb
+Additional file 4,Complete versus subset pseudobulk direction comparison,comma-separated values (.csv),23377,77c848dd8a971053d468b87d34dd01b9538a2933938803938e186c919ab2ce12
+Additional file 5,Neighborhood-expression association robustness,comma-separated values (.csv),23278,b1f25ad5ac8fe07dacda2cfafedc704f6a6c77304fb2fba2ea702937f706e6d0
+Additional file 6,Donor-stratified bootstrap replicates for neighborhood association,comma-separated values (.csv),1760701,66a462942969808d129a3d83aeadbd7b827e8060ef1c4a3fbd4459277d2361d3
+Additional file 7,Joint analysis-unit concordance table,comma-separated values (.csv),35130,5de28ae7737eaa4957414db402739e2434dd9be8f8cbe64ba1f6fa89a2807529
+Additional file 8,Within-donor cell-rank association results,comma-separated values (.csv),20228,e2917333f3e280ecea065d5d428896eaaa9fa9f6628c80077b14fd606776ee3d
+Additional file 9,Complete donor pseudobulk results,comma-separated values (.csv),18127,b0e3f850d34450600dae9e3988c0bcc258f1536ef73012209fb539c9247cd855
+Additional file 10,Leave-one-donor-out replicates for neighborhood association,comma-separated values (.csv),600017,dd0a9d57183e75f771cbb90871f7ffc078d0c7a2c69835c211b35a7b064524c9
+Additional file 11,KPMP ordinal eGFR models,comma-separated values (.csv),5325,fb950ec843cc14f3a27d9381c98971da32c277ad4dd56711dd24f1b4a79b3dc2
+Additional file 12,GSE137570 directional eGFR association,comma-separated values (.csv),971,ed4b0c7ddb9e7df77105d4bf9aa501057c6d02cd3a78a04556f57bf9bf9d4e63
+Additional file 13,Nephroseq precomputed GFR associations,comma-separated values (.csv),12250,3c628fbd2d1f7b4784f76e98ca710e25d7529713ecb753574290c1e6e9eb2c9b
+Additional file 14,Independent non-KPMP validation of PAPPA2 and analysis-unit direction,comma-separated values (.csv),2912,54798ddf7aa60101c91179188ef80198bcabe53fe00cec9955569e9e2b478c96
+Additional file 15,Donor-stratified KPMP TAL marker panel,comma-separated values (.csv),10964,9f035b5afdb53e430287faea1389427631eb350b9b7d9b2d544ae0e254e67691
+Additional file 16,Held-out KPMP signature-transfer validation,comma-separated values (.csv),600,cdcbd41729f3ac8332555ef8a72d20d5872c3774b4259104f1a75442c93c70be
+Additional file 17,External aTAL2-like signature transfer,comma-separated values (.csv),3206,9e936b42ca82722f289b2b0021624dd20abea358cf83d517899bc63bd8b6f177
+Additional file 18,NephQTL2 gene-level eQTL results for PAPPA2 and fixed markers,comma-separated values (.csv),3508,431177175d85845ef66da92bd5ea089c029e4100dda2eed650766df733847569
+Additional file 19,GSE211785 snATAC gene-activity analysis,comma-separated values (.csv),2719,2ef29cd129430ced23b9ab0fd1754d2adfc96eca93a0fe1f8fbadde05aac834d
+Additional file 20,Composition and expression decomposition,comma-separated values (.csv),19371,7f98997271144f479cf7be5047311bfe7c18a4349dd2f56473634adebf8250b9
+Additional file 21,Prespecified 400-gene panel and matched control pool,comma-separated values (.csv),193930,255cd44903a997c009a8fb37f4ca503248b7946403931ab1bc89a3b2fd28dc7d
+Additional file 22,Gene-level analysis-unit metrics,comma-separated values (.csv),8616442,309ebd1960d0c4016e6fe7d04d7eb1fe7af25e88f7824683041d5d6364aa2ce2
+Additional file 23,Random-set analysis-unit sensitivity results,comma-separated values (.csv),173775,39f647ea422edeccb0a62fb85ecc34c9b767012eb2cf7bcd3d0d332b9356bbfb
+Additional file 24,Unit-aware simulation runs,comma-separated values (.csv),67694,ddcf9f1ea2105c120219a5cfd318ec4c5a8e7512c82ecb3efb3ff4a68b303cd6
+Additional file 25,Unit-aware simulation summary,comma-separated values (.csv),790,710ebec249ef076f60a780f1899281423325d4cd97a975336749f21f459671db
+Additional file 26,Analysis-unit robustness,tagged image file format (.tif),639412,d7f3954bc7f0b39c03dce04485de0aae856098a79051751bd834e90e52f41250
+Additional file 27,Unit-aware simulation benchmark,tagged image file format (.tif),144958,db9ede9618f6af4039e87d8165a9b99fddb2fd6fc61ba991939311b1749550f6
+Additional file 28,Analysis-unit threshold sensitivity,comma-separated values (.csv),3233,d1880847677e780541facc4dcc7a45cb05c6b53d75549545bf2499f480a86a7a
+Additional file 29,Effect-aware pairing permutation,Microsoft Excel worksheet (.xlsx),536916,88028451951366f7acb6e005002b026752dd15559445f8aa4b5585fdf0d153a3
