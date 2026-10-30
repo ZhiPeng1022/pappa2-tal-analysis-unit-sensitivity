@@ -1,4 +1,4 @@
-# PAPPA2 TAL analysis-unit sensitivity and Human Genetics Research Article archive
+# PAPPA2 TAL analysis-unit sensitivity archive
 
 Public code and derived-data repository:
 
@@ -12,7 +12,9 @@ Zenodo concept DOI:
 https://doi.org/10.5281/zenodo.23196128
 ```
 
-Zenodo exact DOI for the analyses and Human Genetics package:
+The exact DOI for the corrected `v1.0.9` archive will be assigned after the
+GitHub release. The previous `v1.0.8` DOI is retained only as historical
+metadata:
 
 ```text
 https://doi.org/10.5281/zenodo.23734944
@@ -46,10 +48,14 @@ The analysis compares:
 11. NephQTL2 kidney tubulointerstitial eQTL context;
 12. GSE211785 snATAC gene-activity boundary analysis;
 13. donor-level composition and expression decomposition.
-14. prespecified 400-gene analysis-unit panel with matched random controls.
+14. prespecified 400-gene analysis-unit panel with matched random controls;
+15. reusable `unitaware` software for unit-aware analysis and effect-aware
+    calibration.
 
 PAPPA2 is analyzed as a case gene. The study does not claim a new
-algorithm, software method, or causal mechanism.
+clustering algorithm, experimental validation, or causal mechanism. The
+repository includes a reusable software implementation and a framework-level
+measurement argument.
 
 ## Data sources
 
@@ -199,6 +205,25 @@ Tables S1-S23.
 
 The final manuscript cites `https://doi.org/10.5281/zenodo.23734944`.
 
+## Submission files (Genome Medicine)
+
+The current Genome Medicine Research Article is in
+`manuscript/genome_medicine/`. It includes:
+
+- manuscript v4 in Markdown, DOCX, and PDF;
+- cover letter, pre-submission inquiry, and APC request v2;
+- effect-aware robustness report;
+- simulation report;
+- independent-dataset expansion report;
+- Genome Medicine upgrade plan.
+
+The corresponding figures are in `figures/genome_medicine/`. Additional
+files 1-29, their index, and their checksum manifest are in
+`data/derived/genome_medicine_additional_files/`.
+
+The reusable software is in `software/unitaware/`. The package version is
+`0.2.0`, uses the MIT license, and includes six passing unit tests.
+
 ## Release v1.0.6: final DOI binding
 
 Release `v1.0.6` updates the manuscript, repository metadata, and citation
@@ -234,6 +259,36 @@ https://doi.org/10.5281/zenodo.23734944
 
 No analysis results changed in this release.
 
+## Release v1.0.9: corrected Genome Medicine archive
+
+Release `v1.0.9` adds the corrected Genome Medicine Research Article, the
+`unitaware v0.2.0` software package, corrected 400-gene panel results,
+six-scenario simulations, conditional effect-pairing nulls, threshold
+sensitivity, 29 additional files, and a complete submission draft package.
+
+The original expression-matched comparison showed donor-within reversal in
+19.0% of target genes versus 12.7% of expression-matched sets. An effect-aware
+pairing permutation preserving both effect-size marginals then gave a null of
+20.8% (`P = 0.999`). The manuscript therefore no longer claims broad
+donor-within negative coupling.
+
+Donor versus neighborhood-expression reversal was 21.9% versus an
+expression-matched 14.5%, but the conditional null was 21.2% (`P = 0.111`).
+Neighborhood-expression versus within-donor reversal was 21.0% versus a
+conditional null of 19.4% (`P = 0.0017`), but the result was threshold
+sensitive and was not significant in the 300 biological genes.
+
+The defensible result is that analysis units can change gene-level disease
+conclusions, while broad panel-level negative coupling is not established.
+
+Software release:
+
+```text
+unitaware 0.2.0
+MIT License
+six unit tests
+```
+
 ## Software
 
 Python packages and versions are listed in `requirements.txt`. The Milo
@@ -259,6 +314,9 @@ analysis used R 4.6.1 and `miloR` 2.8.1, with
 | Signature high-confidence margin | 0.2 |
 | Signature bootstrap / permutation cap | 20,000 |
 | Decomposition bootstrap resamples | 2,000 |
+| Unit-aware pairing permutations | 10,000 |
+| Unit-aware robustness seed | `20261028` |
+| Unit-aware simulation replicates | 100 per scenario |
 
 ## Path configuration
 

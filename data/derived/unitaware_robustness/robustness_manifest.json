@@ -1,0 +1,20 @@
+{
+  "analysis": "unitaware effect-aware robustness",
+  "seed": 20261028,
+  "thresholds": [
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "n_random_sets": 1000,
+  "n_pairing_permutations": 10000,
+  "input_sha256": {
+    "gene_unit_metrics_long.csv": "309ebd1960d0c4016e6fe7d04d7eb1fe7af25e88f7824683041d5d6364aa2ce2",
+    "target_panel_400.csv": "d4942c72ed3596ddfa00f312c403e3e56d412d2aed9ad6e6501e03967ad0a4bf",
+    "negative_control_pool_2000.csv": "3a6b8a51ac867ac3adc095c8e8f8263f732b09b6161096b54d6773f076880883"
+  },
+  "permutation_definition": "Within subtype and comparison, right-unit effects were reassigned across genes without replacement. Left-unit effects and all effect-size marginals were preserved."
+}

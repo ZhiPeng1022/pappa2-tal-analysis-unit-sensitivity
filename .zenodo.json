@@ -1,7 +1,7 @@
 {
-  "title": "Analysis-unit sensitivity distinguishes donor-level expression enrichment from within-donor coupling in human kidney thick ascending limb states",
+  "title": "Unit-aware analysis reveals opposing donor and within-donor disease signals in human kidney single-cell data",
   "upload_type": "software",
-  "description": "Analysis code, curated derived tables, manuscript and figures for donor pseudobulk, Milo neighborhood, neighborhood-expression association, within-donor cell-rank, donor-stratified TAL signature transfer, NephQTL2 kidney eQTL context, GSE211785 snATAC context, composition-expression decomposition, independent non-KPMP validation, and a prespecified 400-gene analysis-unit sensitivity panel in human kidney thick ascending limb subtypes.",
+  "description": "Analysis code, curated derived tables, manuscript and figures for donor pseudobulk, Milo neighborhood, neighborhood-expression association, within-donor cell-rank, donor-stratified TAL signature transfer, NephQTL2 kidney eQTL context, GSE211785 snATAC context, composition-expression decomposition, independent non-KPMP validation, a prespecified 400-gene analysis-unit sensitivity panel, a reusable unitaware Python package, and effect-aware conditional-null calibration in human kidney thick ascending limb subtypes.",
   "creators": [
     {
       "name": "Zhi, Peng",
@@ -21,9 +21,11 @@
     "thick ascending limb",
     "single-nucleus RNA sequencing",
     "Milo",
-    "analysis-unit sensitivity"
+    "analysis-unit sensitivity",
+    "single-cell genomics",
+    "reproducible software"
   ],
-  "version": "1.0.8",
-  "publication_date": "2026-10-28",
+  "version": "1.0.9",
+  "publication_date": "2026-10-29",
   "access_right": "open"
 }
