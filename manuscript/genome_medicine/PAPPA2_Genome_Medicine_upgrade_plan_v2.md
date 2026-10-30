@@ -59,9 +59,10 @@ viable:
 
 If Genome Medicine is interested:
 
-- finish GSE284715 if a faster data route is available;
-- release the corrected archive;
-- insert the new DOI;
+- finish GSE284715 through the resumable parallel downloader;
+- the corrected archive has been released;
+- the new DOI has been inserted
+  (`https://doi.org/10.5281/zenodo.23811766`);
 - submit.
 
 ## APC
