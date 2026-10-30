@@ -12,8 +12,8 @@ authors:
   - family-names: Zhang
     given-names: Chaofan
     orcid: "https://orcid.org/0009-0009-9088-0016"
-version: "1.0.9"
-date-released: "2026-10-29"
+version: "1.0.10"
+date-released: "2026-10-31"
 repository-code: "https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity"
 abstract: >-
   Analysis code, curated derived tables, and generated figures for
@@ -32,6 +32,9 @@ keywords:
   - single-cell genomics
   - reproducible software
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23811766"
+    description: "Exact archived version containing the corrected Genome Medicine analysis"
   - type: doi
     value: "10.5281/zenodo.23196128"
     description: "Zenodo concept DOI for all archived versions"

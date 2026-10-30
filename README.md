@@ -12,9 +12,13 @@ Zenodo concept DOI:
 https://doi.org/10.5281/zenodo.23196128
 ```
 
-The exact DOI for the corrected `v1.0.9` archive will be assigned after the
-GitHub release. The previous `v1.0.8` DOI is retained only as historical
-metadata:
+Exact DOI for the corrected `v1.0.9` analysis archive:
+
+```text
+https://doi.org/10.5281/zenodo.23811766
+```
+
+The previous `v1.0.8` DOI is retained as historical metadata:
 
 ```text
 https://doi.org/10.5281/zenodo.23734944
@@ -288,6 +292,17 @@ unitaware 0.2.0
 MIT License
 six unit tests
 ```
+
+## Release v1.0.10: corrected DOI binding
+
+Release `v1.0.10` updates the Genome Medicine manuscript, repository metadata,
+and citation files to cite the exact `v1.0.9` analysis archive:
+
+```text
+https://doi.org/10.5281/zenodo.23811766
+```
+
+No analysis results changed in this release.
 
 ## Software
 
