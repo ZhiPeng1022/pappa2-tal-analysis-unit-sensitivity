@@ -1,0 +1,25 @@
+{
+  "n_samples": 87,
+  "tal_content_genes": [
+    "UMOD",
+    "SLC12A1",
+    "KCNJ1",
+    "CASR",
+    "CLDN16"
+  ],
+  "score_tal_correlation": {
+    "pearson_r": 0.28689387599862465,
+    "p_value": 0.007056855113612744
+  },
+  "matched_set_null": {
+    "observed_beta": -7.976510988522425,
+    "empirical_negative_tail_p": 0.00019998000199980003,
+    "observed_percentile": 0.01,
+    "random_seed": 20261108
+  },
+  "pappa2_incremental": {
+    "delta_r_squared": 0.028284485675511895,
+    "nested_f": 2.9595664320896153,
+    "nested_f_p": 0.08905289970719464
+  }
+}

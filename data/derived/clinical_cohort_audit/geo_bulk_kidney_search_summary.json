@@ -1,0 +1,62 @@
+{
+  "queries": {
+    "gfr": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (\"glomerular filtration rate\"[All Fields] OR GFR[All Fields] OR eGFR[All Fields])",
+      "reported_count": 142,
+      "retrieved": 142
+    },
+    "creatinine": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (creatinine[All Fields])",
+      "reported_count": 42,
+      "retrieved": 42
+    },
+    "fibrosis": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (fibrosis[All Fields] OR \"interstitial fibrosis\"[All Fields])",
+      "reported_count": 151,
+      "retrieved": 151
+    },
+    "progression": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (\"disease progression\"[All Fields] OR progression[All Fields] OR \"graft loss\"[All Fields] OR \"renal function decline\"[All Fields])",
+      "reported_count": 520,
+      "retrieved": 250
+    },
+    "ckd": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (\"chronic kidney disease\"[All Fields] OR CKD[All Fields] OR \"chronic renal disease\"[All Fields])",
+      "reported_count": 154,
+      "retrieved": 154
+    },
+    "dkd": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (\"diabetic kidney disease\"[All Fields] OR \"diabetic nephropathy\"[All Fields])",
+      "reported_count": 98,
+      "retrieved": 98
+    },
+    "iga": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (\"IgA nephropathy\"[All Fields])",
+      "reported_count": 42,
+      "retrieved": 42
+    },
+    "lupus": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (\"lupus nephritis\"[All Fields])",
+      "reported_count": 33,
+      "retrieved": 33
+    },
+    "transplant": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (\"kidney transplant\"[All Fields] OR \"renal allograft\"[All Fields] OR \"kidney allograft\"[All Fields])",
+      "reported_count": 198,
+      "retrieved": 198
+    },
+    "biopsy": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (biopsy[All Fields] AND (\"kidney disease\"[All Fields] OR renal[All Fields]))",
+      "reported_count": 341,
+      "retrieved": 250
+    },
+    "proteinuria": {
+      "query": "\"Homo sapiens\"[Organism] AND (kidney[All Fields] OR renal[All Fields]) AND gse[Entry Type] AND (\"expression profiling by array\"[DataSet Type] OR \"expression profiling by high throughput sequencing\"[DataSet Type]) AND (proteinuria[All Fields] OR albuminuria[All Fields])",
+      "reported_count": 56,
+      "retrieved": 56
+    }
+  },
+  "unique_series": 965,
+  "filtered_candidates": 212,
+  "filter_rule": "human GSE; n>=20; no single-cell/spatial/urine/blood/methylation exclusion term; at least one clinical term"
+}

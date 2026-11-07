@@ -289,3 +289,23 @@ File format: Microsoft Excel worksheet (.xlsx)
 Title: Effect-aware pairing permutation
 
 SHA256: `88028451951366f7acb6e005002b026752dd15559445f8aa4b5585fdf0d153a3`
+
+## Additional file 30
+
+File name: `Additional file 30.xlsx`
+
+File format: Microsoft Excel worksheet (.xlsx)
+
+Title: External application of the frozen analysis-unit panel
+
+SHA256: `33add39aeafa67f648b151e4b305e8f658172e5e57621c28458ecf00943cd1a4`
+
+## Additional file 31
+
+File name: `Additional file 31.xlsx`
+
+File format: Microsoft Excel worksheet (.xlsx)
+
+Title: GSE175759 clinical-association analysis
+
+SHA256: `37bd09b01552bce698f4f0a94966290c37337299b6130d6e8e792746e62d48da`

@@ -1,0 +1,2 @@
+model,role,n,coefficient,robust_se_hc3,ci_lower,ci_upper,p_value,r_squared
+PAPPA2_only_unadjusted,prespecified secondary,87,-9.056125341886471,2.565039144996244,-14.08360206607911,-4.0286486176938325,0.0006723192423855276,0.16956587749158047
