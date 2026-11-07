@@ -12,7 +12,7 @@ authors:
   - family-names: Zhang
     given-names: Chaofan
     orcid: "https://orcid.org/0009-0009-9088-0016"
-version: "1.0.11"
+version: "1.0.12"
 date-released: "2026-11-08"
 repository-code: "https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity"
 abstract: >-
@@ -36,6 +36,9 @@ keywords:
   - clinical association
   - reproducible software
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24042041"
+    description: "Exact archived analysis release for GSE175759 clinical association"
   - type: doi
     value: "10.5281/zenodo.23196128"
     description: "Zenodo concept DOI for all archived versions"
