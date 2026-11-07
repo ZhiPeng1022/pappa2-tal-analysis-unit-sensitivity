@@ -1,0 +1,79 @@
+{
+  "cohort": "GSE175759",
+  "n_after_exclusions": 87,
+  "excluded_technical_outliers": 3,
+  "score_direction_expected": "negative",
+  "genes": [
+    "PAPPA2",
+    "TMPRSS4",
+    "LIX1",
+    "WNT10A",
+    "KRT7",
+    "CRIP1",
+    "S100A14",
+    "LAMC2",
+    "LAMB3",
+    "SOD3",
+    "B3GALT5"
+  ],
+  "primary_model": {
+    "model": "primary_unadjusted",
+    "role": "prespecified primary",
+    "n": 87,
+    "coefficient": -7.976510988522423,
+    "robust_se_hc3": 2.2015710898403262,
+    "ci_lower": -12.291590324609462,
+    "ci_upper": -3.6614316524353843,
+    "p_value": 0.000494551715045699,
+    "r_squared": 0.13154657581012397
+  },
+  "diagnosis_adjusted_model": {
+    "model": "diagnosis_adjusted",
+    "role": "prespecified secondary",
+    "n": 87,
+    "coefficient": -8.710635802746044,
+    "robust_se_hc3": 2.5929154691522394,
+    "ci_lower": -13.792750122284433,
+    "ci_upper": -3.6285214832076544,
+    "p_value": 0.0012047582921353593,
+    "r_squared": 0.26629490893483687
+  },
+  "diagnosis_and_library_adjusted_model": {
+    "model": "diagnosis_and_library_adjusted",
+    "role": "sensitivity",
+    "n": 87,
+    "coefficient": -8.563711095593602,
+    "robust_se_hc3": 2.48135402760601,
+    "ci_lower": -13.427164989701382,
+    "ci_upper": -3.7002572014858224,
+    "p_value": 0.0009039364670163656,
+    "r_squared": 0.3126076625315851
+  },
+  "pappa2_only_model": {
+    "model": "PAPPA2_only_unadjusted",
+    "role": "prespecified secondary",
+    "n": 87,
+    "coefficient": -9.056125341886471,
+    "robust_se_hc3": 2.565039144996244,
+    "ci_lower": -14.08360206607911,
+    "ci_upper": -4.0286486176938325,
+    "p_value": 0.0006723192423855276,
+    "r_squared": 0.16956587749158047
+  },
+  "correlations": {
+    "pearson": [
+      -0.3626935011964291,
+      0.0005556343549883332
+    ],
+    "spearman": [
+      -0.28948579514873335,
+      0.006536449940419289
+    ]
+  },
+  "limitations": [
+    "no age",
+    "no sex",
+    "mixed primary kidney diseases",
+    "observational association only"
+  ]
+}

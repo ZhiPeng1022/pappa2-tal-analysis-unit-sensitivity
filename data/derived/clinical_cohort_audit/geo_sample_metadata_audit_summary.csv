@@ -1,0 +1,47 @@
+accession,title,n_samples,n_characteristics,gfr_numeric,gfr_keyword,creatinine_keyword,fibrosis_keyword,progression_keyword,proteinuria_keyword,age_key,sex_key,disease_key,characteristic_names
+GSE104954,Tubulointerstitial transcriptome from ERCB subjects with chronic kidney disease and living donor biopsies.,195,2,False,False,False,False,False,False,False,False,True,diagnosis; tissue
+GSE99325,Transcriptome-based network analysis reveals renal cell type-specific dysregulation of hypoxia-associated transcripts [Tub-FE],175,2,False,False,False,False,False,False,False,False,False,batch; tissue
+GSE57387,Transcriptome signature in early biopsies of stably functioning kidney allografts identify patients at risk for chronic injury,159,3,False,False,False,False,False,False,False,False,False,m12 cadi; m3 cadi; tissue type
+GSE22459,Fibrosis with Inflammation at One Year Predicts Transplant Functional Decline,65,1,False,False,False,True,False,False,False,False,False,histology
+GSE126805,Transcriptional trajectories of human kidney injury progression,163,2,False,False,False,False,True,False,False,False,False,patient; time point
+GSE222889,Novel transcriptomic signatures associated with premature kidney allograft failure,80,5,False,False,True,False,False,False,True,False,True,age at sampling (years); clinical diagnosis; condition; creatinine at sampling (umol/l); tissue
+GSE21374,Expression data from human renal allograft biopsies,282,5,False,False,False,False,False,False,False,False,False,failed=1/non failed=0; rejection/non rejection; sample included in the main analysis- the first biopsy per patient from the 105 late (> 1 year) patients; time from biopsy to failure/censoring (days); time of biopsy post transplant (days)
+GSE25902,Innate and adaptive immune responses associate with progressive histological damage of renal allografts,120,5,False,False,False,True,False,False,False,False,False,cadi score; i-ifta grade; time point; tissue; total i score
+GSE273763,Transcriptional analyses reveal the molecular features that underlie established injury and disease progression in DKD,63,3,False,False,False,False,True,False,False,False,True,cluster name; group; tissue
+GSE96804,Exon Level Expression Profiling of Diabetic Nephropathy,61,2,False,False,False,False,False,False,False,True,False,Sex; tissue
+GSE30122,Transcriptome Analysis of Human Diabetic Kidney Disease,69,4,False,False,False,False,False,False,False,False,True,disease state; individual; tissue; tissue subregion
+GSE66494,Development of gene expression profiles in human chronic kidney disease,61,5,False,False,False,False,False,False,False,False,True,disease status; sample type; specimen id; study set; tissue
+GSE115857,SPECIFIC BIOMARKERS ASSOCIATED WITH CHRONIC RENAL LESIONS IN IGA NEPHROPATHY PATIENTS. A MULTICENTER STUDY,86,3,False,False,False,False,False,False,False,False,False,classification; subject status; tissue
+GSE116626,Specific biomarkers Associated with Active and Chronic Renal Lesions in IgA Nephropathy. A Multicenter Study,81,4,False,False,False,False,False,False,False,True,False,Sex; igan patient grpup; subject status; tissue
+GSE175759,RNA-seq profiling of tubulointerstitial tissue reveals a potential therapeutic role of dual anti-phosphatase 1 in kidney diseases,90,4,True,True,False,False,False,False,False,False,True,diagnosis; estimated gfr (ckd-epi); technical outlier; tissue
+GSE127797,The Molecular Phenotype of Lupus Nephritis Histological Lesions,88,4,False,False,False,False,False,False,False,False,False,class; subclass; subject id; tissue
+GSE32591,Expression data from human with lupus nephritis (LN),93,3,False,False,False,False,False,False,False,False,True,disease status; patient number; tissue
+GSE290167,Archetypal Analysis of Deceased Donor Kidneys: A Molecular Approach for Posttransplant Outcomes,276,10,False,False,False,False,True,False,True,False,False,donor age; donor biopsy ah; donor biopsy ci; donor biopsy ct; donor biopsy cv; donor bmi; donor category; donor hypertension; patient id; tissue
+GSE147451,Gene expression in donor kidney biopsies prior to kidney transplantation,192,6,False,True,False,False,False,False,True,False,True,batch effect; donor age; donor bmi; donor race; gfr group; kdpi
+GSE295373,Evolution of kidney transcriptomic signatures associated with donors’ diabetes in normoglycemic transplant recipients: prospective observational study,179,4,False,False,False,False,False,False,False,False,False,donor diabetes; left/right kidney; patient id; recipient diabetes
+GSE248752,Australian Chronic Allograft Dysfunction I,70,2,False,False,False,False,False,False,False,False,False,tissue; treatment
+GSE261240,Australian Chronic Allograft Dysfunction II,136,4,False,False,False,False,False,False,False,False,True,disease; protocol; tissue; treatment
+GSE261892,Australian Chronic Allograft Dysfunction III,123,2,False,False,False,False,False,False,False,False,False,classification; tissue
+GSE298999,Kidney transcriptomic profiling of immune-related genes in ANCA-associated vasculitis,224,3,False,False,False,False,False,False,False,False,True,batch; disease group; tissue
+GSE181757,Progressive Decline of Function in Renal Allografts with Normal One Year Biopsies,440,5,False,False,False,False,False,False,False,False,False,cohort; patient; phenotype; protocol; wp_id
+GSE93798,Transcriptomic and proteomic profiling reveal insights of mesangial cell function in patients with IgA Nephropathy,42,1,False,False,False,False,False,False,False,False,False,tissue
+GSE139061,Transcriptomic Signatures of Kidney Injury in Human Renal Biopsy Specimens,48,6,False,False,False,False,False,False,True,True,True,age; disease; gender; sequencing id; storage; tissue
+GSE163603,Transcriptomic Signatures of Kidney Injury in Human Renal Biopsy Specimens,66,6,False,False,False,False,False,False,True,True,True,disease; gender; segment; storage; tissue; tissue source
+GSE47184,In silico nano-dissection: defining cell type specificity at transcriptional level in human disease (tubulointerstitium),107,2,False,False,False,False,False,False,False,False,True,disease status; tissue
+GSE30528,Transcriptome Analysis of Human Diabetic Kidney Disease (DKD Glomeruli vs. Control Glomeruli),22,4,False,False,False,False,False,False,False,False,True,disease state; individual; tissue; tissue subregion
+GSE30529,Transcriptome Analysis of Human Diabetic Kidney Disease (DKD Tubuli vs. Control Tubuli),22,3,False,False,False,False,False,False,False,False,True,disease state; tissue; tissue subregion
+GSE47109,,246,4,False,False,False,False,False,False,True,False,False,er status; grade; size (cm); tumor stage
+GSE37460,Cross-species transcriptional network analysis defines shared inflammatory responses in murine and human lupus nephritis [Glomeruli],69,1,False,False,False,False,False,False,False,False,False,tissue
+GSE35487,Expression data from human with IgA nephropathy (IgAN) [HG-U133A],31,1,False,False,False,False,False,False,False,False,False,tissue
+GSE35489,Expression data from human with IgA nephropathy (IgAN),62,1,False,False,False,False,False,False,False,False,False,tissue
+GSE30718,Molecular Phenotypes of Acute Kidney Injury in Kidney Transplants,47,2,False,False,False,False,False,False,False,False,True,diagnosis; tissue
+GSE90861,A Molecular signature for Delayed Graft Function [RNA-Seq],46,2,False,False,False,False,True,False,False,False,False,functional status/outcome; tissue
+GSE95026,Validation of systems biology derived molecular markers of donor organ status associated with long term allograft function,78,4,False,False,True,False,False,False,True,True,False,age; gender; last donor creatinine; tissue
+GSE82337,Early Subclinical Inflammation Correlates with Outcomes in Positive Crossmatch Kidney Allografts,78,3,False,False,False,False,True,False,False,False,False,"crossmatch type (positive =xm+, negative =xm-); protocol duration; tissue"
+GSE37838,Comparing molecular assessment of implantation biopsies with histologic and demographic risk assessment.,78,11,False,False,False,False,False,False,True,False,True,"dgf status; diagnosis (good,bad); donor age; geo sample; glomerulosclerosis  (inadequate tissue for pathology interpretation); irish score; kdri; mapi (inadequate tissue for pathology interpretation); remuzzi score (inadequate tissue for pathology interpretation); schold score; tissue"
+GSE83486,Early introduction of oral paricalcitol in renal transplant recipients.,60,1,False,False,False,False,False,False,False,False,False,paricalcitol treated
+GSE19130,Renal allograft dysfunction,119,3,False,False,False,False,False,False,False,False,True,condition_sample_id; state; tissue type
+GSE26578,Renal allograft dysfunction (kidney tissue data set),113,3,False,False,False,False,False,False,False,False,True,condition_sample_id; disease status; tissue
+GSE11166,Local regulation and clinical impact of complement gene expression in deceased and living donor kidney allografts,95,1,False,False,False,False,False,False,False,False,False,characteristic_1
+GSE61739,Gene Expression Profiles of Transplanted Kidneys from Deceased Donors with Severe Acute Kidney Injury,96,2,False,False,False,False,False,False,False,False,False,date of transplantation; kidney transplant recipient
+GSE217427,Multi-omics and imaging mass cytometry characterization of human kidneys to identify pathways and phenotypes associated with kidney damage,44,10,True,True,False,False,False,False,True,True,True,Sex; age; bmi; disease state; donor; egfr; sampled date; side; tissue; tissue weight_(mg)
