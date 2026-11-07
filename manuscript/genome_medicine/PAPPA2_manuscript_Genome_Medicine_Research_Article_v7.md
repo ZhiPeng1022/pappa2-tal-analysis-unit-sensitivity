@@ -1420,7 +1420,7 @@ Project name: pappa2-tal-analysis-unit-sensitivity
 Project home page:
 https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity
 
-Archived version: https://doi.org/10.5281/zenodo.23811766
+Archived version: https://doi.org/10.5281/zenodo.24042041
 
 Operating system(s): Platform independent
 
@@ -1460,7 +1460,7 @@ https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity. The
 versioned archive containing the signature-transfer, regulatory-support,
 composition-expression, and prespecified analysis-unit panel is available at
 the project repository. The corrected v0.2.0 analysis archive is available at
-https://doi.org/10.5281/zenodo.23811766.
+https://doi.org/10.5281/zenodo.24042041.
 
 ### Competing interests
 

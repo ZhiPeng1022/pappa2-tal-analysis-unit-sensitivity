@@ -37,7 +37,7 @@ with lower eGFR after diagnosis adjustment (beta = -8.71 eGFR points per SD;
 negative, whereas the IgA-only subgroup was underpowered. We present this as
 one independent clinical-association cohort, not as stable multicohort
 validation or clinical utility. The corrected analysis archive is available at
-https://doi.org/10.5281/zenodo.23811766.
+https://doi.org/10.5281/zenodo.24042041.
 
 We believe this work may fit Genome Medicine because it addresses a general
 measurement problem in genomic medicine and provides a reusable framework for
