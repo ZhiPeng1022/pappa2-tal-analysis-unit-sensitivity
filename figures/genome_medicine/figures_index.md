@@ -1,25 +1,16 @@
-# Figure files index
+# Genome Medicine main figures v45
 
-All figures are 300 dpi. Upload the **TIFF** files (LZW lossless compression,
-0.12–0.37 MB each). The matching PNG files are reference copies for preview only.
+All TIFF files are RGB, 300 dpi, LZW-compressed, and below 10 MB.
+Each figure also has a vector PDF and a PNG preview.
 
-| Upload file | Reference file | Content |
-|---|---|---|
-| `Fig1.tif` | `Fig1.png` | TAL location and analysis-unit study design (hand-drawn) |
-| `Fig2.tif` | `Fig2.png` | Subtype-resolved disease-related neighborhood remodeling (Milo) |
-| `Fig3.tif` | `Fig3.png` | Four analysis units: question answered and limitation (table layout) |
-| `Fig4.tif` | `Fig4.png` | Complete TAL coverage and subset discordance |
-| `Fig5.tif` | `Fig5.png` | PAPPA2 case analysis across TAL subtypes |
-| `Fig6.tif` | `Fig6.png` | aTAL2 and frTAL cross-unit discordance |
-| `Fig7.tif` | `Fig7.png` | Internal robustness of complete TAL pseudobulk effects |
-| `Fig8.tif` | `Fig8.png` | Subtype-specific TAL state model |
-| `Figure_S1_panel_validation.tif` | `Figure_S1_panel_validation.png` | Prespecified 400-gene analysis-unit panel validation (supplementary) |
-| `Figure_S2_unitaware_simulation.tif` | `Figure_S2_unitaware_simulation.png` | Unit-aware simulation benchmark (supplementary) |
-
-## Notes
-
-- TIFF files are RGB, 8 bit per channel, LZW compressed, 300 dpi.
-- No labels or annotations are burned into the images; all figure titles and
-  legends are in the manuscript file.
-- Figures are named to match the manuscript legends and are cited in the same
-  order in the text.
+| Figure | Title | Size (mm) | DPI | MB |
+|---|---|---:|---:|---:|
+| Fig. 1 | Study design and analysis-unit evaluation | 170.0 x 100.0 | 300 | 0.464 |
+| Fig. 2 | Subtype-specific disease-related neighborhood remodeling | 167.2 x 71.2 | 300 | 0.257 |
+| Fig. 3 | Conceptual comparison of the four analysis units | 169.0 x 76.4 | 300 | 0.199 |
+| Fig. 4 | Coverage loss and directional consequences in the derivative TAL subset | 167.2 x 97.7 | 300 | 0.184 |
+| Fig. 5 | PAPPA2 case analysis across TAL subtypes | 166.9 x 105.3 | 300 | 0.374 |
+| Fig. 6 | PAPPA2 cross-unit conflict in aTAL2 and subtype-wide conflict counts | 167.2 x 60.5 | 300 | 0.139 |
+| Fig. 7 | Internal robustness of the PAPPA2 TAL pseudobulk effect | 167.2 x 132.2 | 300 | 0.198 |
+| Fig. 8 | Calibration stability and portability across cohorts, graph settings, and embeddings | 182.9 x 118.1 | 300 | 0.268 |
+| Fig. 9 | Subtype-specific TAL state model | 170.0 x 70.0 | 300 | 0.165 |

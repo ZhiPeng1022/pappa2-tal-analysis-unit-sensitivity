@@ -1,4 +1,4 @@
-# unitaware v0.2.0
+# unitaware v0.3.0
 
 `unitaware` is a small reference implementation for testing whether
 disease-associated cell-state signals depend on the analysis unit.
@@ -70,6 +70,36 @@ of, conventional matched-set comparisons. `aggregate="gene"` first averages
 valid strata within each gene and then averages genes; `aggregate="row"` gives
 each finite gene-stratum pair equal weight.
 
+## Calibration stability
+
+Graph construction and neighborhood sampling can change the residual after
+effect-aware calibration. The stability summary accepts one row per graph,
+seed, or other calibration setting:
+
+```python
+from unitaware import summarize_calibration_stability
+
+stability = summarize_calibration_stability(
+    runs=runs,
+    group_cols=("endpoint",),
+    effect_col="effect",
+    p_col="p_value",
+    alpha=0.05,
+)
+```
+
+The output reports the effect range, sign counts, decision counts, direction
+stability, decision stability, and a descriptive class:
+
+- `stable_support`: same non-zero direction and significant result in every run;
+- `stable_null`: near-zero direction and no significant result in every run;
+- `direction_stable_decision_unstable`: direction is preserved but significance changes;
+- `direction_unstable`: the effect changes sign across settings.
+
+The function does not create a new combined p value. It makes calibration
+uncertainty explicit so that a single graph-specific result is not reported as
+a general biological conclusion.
+
 ## Command line
 
 Generate a synthetic dataset:
@@ -88,6 +118,17 @@ unitaware analyze \
   --case-level Disease \
   --reference-level Reference \
   --out results
+```
+
+Summarize graph or seed calibration runs:
+
+```bash
+unitaware stability \
+  --input calibration_runs.csv \
+  --group-cols endpoint \
+  --effect-col effect \
+  --p-col p_value \
+  --out calibration_stability.csv
 ```
 
 The expression table must contain a `cell_id` column plus gene columns. The cell

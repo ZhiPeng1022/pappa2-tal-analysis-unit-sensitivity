@@ -683,3 +683,136 @@ def decompose_composition(
             }
         ]
     )
+
+
+def summarize_calibration_stability(
+    runs: pd.DataFrame,
+    *,
+    group_cols: tuple[str, ...] | list[str] | str = ("endpoint",),
+    effect_col: str = "effect",
+    p_col: str = "p_value",
+    alpha: float = 0.05,
+    null_tolerance: float = 0.0,
+) -> pd.DataFrame:
+    """Summarize effect direction and decision stability across calibration runs.
+
+    Each row of ``runs`` represents one graph, seed, or other calibration
+    setting. The function reports descriptive stability classes rather than a
+    new p value. ``stable_support`` requires a consistent non-zero direction
+    and a significant decision in every run. ``direction_unstable`` indicates
+    that the effect changes sign across settings.
+    """
+    if not 0 < alpha < 1:
+        raise ValueError("alpha must be between 0 and 1")
+    if null_tolerance < 0:
+        raise ValueError("null_tolerance must be non-negative")
+    if isinstance(group_cols, str):
+        group_cols = (group_cols,)
+    group_cols = tuple(group_cols)
+    missing = sorted(
+        set([*group_cols, effect_col, p_col]).difference(runs.columns)
+    )
+    if missing:
+        raise ValueError(f"Missing columns: {missing}")
+
+    rows = []
+    for keys, group in runs.groupby(
+        list(group_cols),
+        observed=True,
+        dropna=False,
+    ):
+        if not isinstance(keys, tuple):
+            keys = (keys,)
+        effects = pd.to_numeric(
+            group[effect_col],
+            errors="coerce",
+        ).to_numpy(dtype=float)
+        p_values = pd.to_numeric(
+            group[p_col],
+            errors="coerce",
+        ).to_numpy(dtype=float)
+        valid_effect = np.isfinite(effects)
+        effects = effects[valid_effect]
+        p_values = p_values[valid_effect]
+        n_runs = len(effects)
+        if n_runs == 0:
+            continue
+
+        positive = effects > null_tolerance
+        negative = effects < -null_tolerance
+        near_zero = ~(positive | negative)
+        n_positive = int(positive.sum())
+        n_negative = int(negative.sum())
+        n_near_zero = int(near_zero.sum())
+        if n_positive == n_runs:
+            direction_stability = "stable_positive"
+        elif n_negative == n_runs:
+            direction_stability = "stable_negative"
+        elif n_near_zero == n_runs:
+            direction_stability = "stable_zero"
+        elif max(n_positive, n_negative, n_near_zero) == n_runs:
+            direction_stability = "stable"
+        else:
+            direction_stability = "direction_unstable"
+
+        finite_p = np.isfinite(p_values)
+        n_p_tests = int(finite_p.sum())
+        n_significant = int(
+            np.sum(finite_p & (p_values < alpha))
+        )
+        if n_p_tests == 0:
+            decision_stability = "undetermined"
+        elif n_significant == n_p_tests:
+            decision_stability = "all_significant"
+        elif n_significant == 0:
+            decision_stability = "none_significant"
+        else:
+            decision_stability = "mixed_significance"
+
+        stable_direction = direction_stability in {
+            "stable_positive",
+            "stable_negative",
+            "stable_zero",
+            "stable",
+        }
+        if (
+            direction_stability in {"stable_positive", "stable_negative"}
+            and decision_stability == "all_significant"
+        ):
+            stability_class = "stable_support"
+        elif (
+            direction_stability == "stable_zero"
+            and decision_stability == "none_significant"
+        ):
+            stability_class = "stable_null"
+        elif (
+            stable_direction
+            and decision_stability == "mixed_significance"
+        ):
+            stability_class = "direction_stable_decision_unstable"
+        elif direction_stability == "direction_unstable":
+            stability_class = "direction_unstable"
+        else:
+            stability_class = "conditional"
+
+        effect_min = float(np.min(effects))
+        effect_max = float(np.max(effects))
+        row = {
+            **dict(zip(group_cols, keys)),
+            "n_runs": n_runs,
+            "effect_mean": float(np.mean(effects)),
+            "effect_median": float(np.median(effects)),
+            "effect_min": effect_min,
+            "effect_max": effect_max,
+            "effect_range": effect_max - effect_min,
+            "n_positive": n_positive,
+            "n_negative": n_negative,
+            "n_near_zero": n_near_zero,
+            "n_significant": n_significant,
+            "n_p_tests": n_p_tests,
+            "direction_stability": direction_stability,
+            "decision_stability": decision_stability,
+            "stability_class": stability_class,
+        }
+        rows.append(row)
+    return pd.DataFrame(rows)

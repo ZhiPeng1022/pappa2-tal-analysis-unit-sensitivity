@@ -1,0 +1,4 @@
+endpoint,n_runs,effect_mean,effect_median,effect_min,effect_max,effect_range,n_positive,n_negative,n_near_zero,n_significant,n_p_tests,direction_stability,decision_stability,stability_class
+aTAL2_PAPPA2_cell_rank_conflict,4,-0.1849769402503385,-0.18467252534834938,-0.2096529731094958,-0.1609097371951595,0.0487432359143363,0,4,0,4,4,stable_negative,all_significant,stable_support
+donor_conditioned_panel_residual,4,0.004777418402777751,0.0094211041666666,-0.0176552569444444,0.0179227222222222,0.0355779791666666,3,1,0,2,4,direction_unstable,mixed_significance,direction_unstable
+expression_matched_bias,4,0.0809798263888889,0.08467697916666665,0.06293340277777781,0.0916319444444445,0.028698541666666688,4,0,0,4,4,stable_positive,all_significant,stable_support

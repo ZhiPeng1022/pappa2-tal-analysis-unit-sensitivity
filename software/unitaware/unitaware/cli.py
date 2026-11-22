@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from .core import analyze_units
+from .core import analyze_units, summarize_calibration_stability
 from .simulation import simulate_reversal
 
 
@@ -44,6 +44,21 @@ def main() -> int:
     analyze.add_argument("--condition-col", default="condition")
     analyze.add_argument("--neighborhood-col", default="neighborhood_id")
     analyze.add_argument("--exposure-col", default="exposure")
+    stability = subparsers.add_parser(
+        "stability",
+        help="Summarize calibration stability across graph/seed runs",
+    )
+    stability.add_argument("--input", required=True)
+    stability.add_argument("--out", required=True)
+    stability.add_argument("--group-cols", default="endpoint")
+    stability.add_argument("--effect-col", default="effect")
+    stability.add_argument("--p-col", default="p_value")
+    stability.add_argument("--alpha", type=float, default=0.05)
+    stability.add_argument(
+        "--null-tolerance",
+        type=float,
+        default=0.0,
+    )
     args = parser.parse_args()
 
     if args.command == "simulate":
@@ -97,6 +112,25 @@ def main() -> int:
             index=False,
         )
         print(output_dir)
+    elif args.command == "stability":
+        table = read_table(args.input)
+        group_cols = tuple(
+            value.strip()
+            for value in args.group_cols.split(",")
+            if value.strip()
+        )
+        result = summarize_calibration_stability(
+            table,
+            group_cols=group_cols,
+            effect_col=args.effect_col,
+            p_col=args.p_col,
+            alpha=args.alpha,
+            null_tolerance=args.null_tolerance,
+        )
+        output_path = Path(args.out)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        result.to_csv(output_path, index=False)
+        print(output_path)
     return 0
 
 

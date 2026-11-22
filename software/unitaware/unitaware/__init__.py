@@ -8,6 +8,7 @@ from .core import (
     paired_reversal_permutation,
     reversal_fraction,
     standardize_and_score,
+    summarize_calibration_stability,
     within_donor,
 )
 from .simulation import simulate_reversal
@@ -21,5 +22,6 @@ __all__ = [
     "reversal_fraction",
     "simulate_reversal",
     "standardize_and_score",
+    "summarize_calibration_stability",
     "within_donor",
 ]

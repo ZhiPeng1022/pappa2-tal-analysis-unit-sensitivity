@@ -1,7 +1,7 @@
 {
-  "title": "Analysis-unit dependence and effect-aware calibration in human kidney thick ascending limb single-cell studies",
+  "title": "Unit-aware calibration of single-cell disease associations: analysis-unit, effect-size, and graph-stability audits in human kidney atlases",
   "upload_type": "software",
-  "description": "Analysis code, curated derived tables, manuscript and figures for donor pseudobulk, Milo neighborhood, neighborhood-expression association, within-donor cell-rank, donor-stratified TAL signature transfer, NephQTL2 kidney eQTL context, GSE211785 snATAC context, composition-expression decomposition, independent non-KPMP single-cell validation, a prespecified 400-gene analysis-unit sensitivity panel, a reusable unitaware Python package, effect-aware conditional-null calibration, and an independent GSE175759 primary kidney-disease clinical-association analysis with TAL-content adjustment and 10,000 expression-matched random gene sets.",
+  "description": "Analysis code, unitaware v0.3.0, curated results, figures, and manuscript v45 for analysis-unit dependence, effect-size selection, calibration-stability auditing, and graph/seed/proportion/embedding sensitivity in human kidney single-cell studies. The archive includes nine main figures, three supplementary figures, and six Excel additional-file workbooks.",
   "creators": [
     {
       "name": "Zhi, Peng",
@@ -17,17 +17,28 @@
     }
   ],
   "keywords": [
-    "human kidney",
-    "thick ascending limb",
-    "single-nucleus RNA sequencing",
     "Milo",
     "analysis-unit sensitivity",
-    "single-cell genomics",
     "bulk RNA sequencing",
+    "calibration stability",
     "clinical association",
-    "reproducible software"
+    "embedding sensitivity",
+    "graph sensitivity",
+    "human kidney",
+    "reproducible software",
+    "single-cell genomics",
+    "single-nucleus RNA sequencing",
+    "thick ascending limb"
   ],
-  "version": "1.0.12",
-  "publication_date": "2026-11-08",
-  "access_right": "open"
+  "version": "1.0.13",
+  "publication_date": "2026-11-22",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.24441900",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    }
+  ]
 }
