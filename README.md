@@ -1,4 +1,4 @@
-# PAPPA2 TAL analysis-unit sensitivity archive
+# Unit-aware calibration of single-cell disease associations
 
 Public code and derived-data repository:
 
@@ -24,7 +24,7 @@ Exact DOI for the `v1.0.11` analysis archive:
 https://doi.org/10.5281/zenodo.24042041
 ```
 
-`v1.0.12` is the DOI-binding release for the manuscript and citation metadata.
+`v1.0.13` aligns the repository with the v45 methodology-standard manuscript, unitaware v0.3.0, and calibration-stability audits across graph, seed, proportion, and embedding settings.
 
 The previous `v1.0.8` DOI is retained as historical metadata:
 
@@ -38,6 +38,10 @@ Analysis code for the manuscript:
 Analysis-unit sensitivity distinguishes donor-level expression enrichment
 from within-donor coupling in human kidney thick ascending limb states
 ```
+
+## unitaware v0.3.0 software DOI
+
+https://doi.org/10.5281/zenodo.24441900
 
 ## Overview
 
@@ -65,9 +69,13 @@ The analysis compares:
     calibration.
 16. independent GSE175759 primary kidney-disease clinical-association
     analysis, including TAL-content adjustment and 10,000 expression-matched
-    random gene sets.
+    random gene sets;
+17. actual-Milo k, seed, neighborhood-proportion, and embedding-space
+    sensitivity;
+18. calibration-stability classification for stable support, stable null,
+    decision instability, and direction instability.
 
-PAPPA2 is analyzed as a case gene. The study does not claim a new
+PAPPA2 is analyzed as a prespecified benchmark case for donor-level elevation and representation-sensitive within-donor coupling. The study does not claim a new
 clustering algorithm, experimental validation, or causal mechanism. The
 repository includes a reusable software implementation and a framework-level
 measurement argument.

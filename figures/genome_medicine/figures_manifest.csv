@@ -1,0 +1,10 @@
+figure,title,pixels,width_mm,height_mm,dpi,compression,bytes,sha256
+Fig. 1,Study design and analysis-unit evaluation,2008x1181,170.0,100.0,300,tiff_lzw,486042,a5914214aa77ef5d4e8dca79d85165fa9fc1ada14c8cbc73512ce430fc3f1059
+Fig. 2,Subtype-specific disease-related neighborhood remodeling,1975x841,167.2,71.2,300,tiff_lzw,269692,0d0b77f6e9a313837680e79c1389b170dabe36160b00cf35793b9c0ac2904f74
+Fig. 3,Conceptual comparison of the four analysis units,1996x902,169.0,76.4,300,tiff_lzw,208866,3034b71a8a5fd94a27cfb39f3664ce6af990f9582499a499893bb06ba2e42ebd
+Fig. 4,Coverage loss and directional consequences in the derivative TAL subset,1975x1154,167.2,97.7,300,tiff_lzw,192912,46ae48d72c9b41692cc5efbbf2c416a16893d8af50fb8def05ef0442dc706436
+Fig. 5,PAPPA2 case analysis across TAL subtypes,1971x1244,166.9,105.3,300,tiff_lzw,391780,f8b8cf53ac2f7f12b97aa360a7fc4dbc4e97decd39e28d8260b50b5a6a0ff4ae
+Fig. 6,PAPPA2 cross-unit conflict in aTAL2 and subtype-wide conflict counts,1975x714,167.2,60.5,300,tiff_lzw,145914,6faa2ace79aaac987252a07dc85bb513c8b1b8f6694d8ea8fb95aba034d9c811
+Fig. 7,Internal robustness of the PAPPA2 TAL pseudobulk effect,1975x1562,167.2,132.2,300,tiff_lzw,207348,cfefc2eee60e67a434e794345a5bfbc489bbebd96123bd8648c8f0abc04d994b
+Fig. 8,"Calibration stability and portability across cohorts, graph settings, and embeddings",2160x1395,182.9,118.1,300,tiff_lzw,281180,2097b9fd537ef99c5414ef3d20bdb8c49843a52a081e30987b37d49e93d487f9
+Fig. 9,Subtype-specific TAL state model,2008x827,170.0,70.0,300,tiff_lzw,172598,11ae61386bb8af6dc47b7333756178f4a0f3003c7988373736886b32d6fe166c

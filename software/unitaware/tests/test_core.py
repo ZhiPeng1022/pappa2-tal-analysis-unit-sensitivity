@@ -14,6 +14,7 @@ from unitaware import (
     paired_reversal_permutation,
     reversal_fraction,
     simulate_reversal,
+    summarize_calibration_stability,
 )
 from unitaware.cli import main
 
@@ -181,6 +182,77 @@ class UnitAwareCoreTests(unittest.TestCase):
             ) as handle:
                 reader = csv.DictReader(handle)
                 self.assertIn("donor_id", reader.fieldnames)
+
+    def test_calibration_stability_detects_stable_support(self):
+        runs = pd.DataFrame(
+            {
+                "endpoint": ["case_conflict"] * 4,
+                "effect": [-0.20, -0.19, -0.16, -0.17],
+                "p_value": [0.001, 0.001, 0.002, 0.001],
+            }
+        )
+        result = summarize_calibration_stability(runs).iloc[0]
+        self.assertEqual(result["direction_stability"], "stable_negative")
+        self.assertEqual(result["decision_stability"], "all_significant")
+        self.assertEqual(result["stability_class"], "stable_support")
+
+    def test_calibration_stability_detects_direction_instability(self):
+        runs = pd.DataFrame(
+            {
+                "endpoint": ["panel_residual"] * 4,
+                "effect": [0.018, -0.018, 0.007, 0.012],
+                "p_value": [0.001, 0.999, 0.125, 0.019],
+            }
+        )
+        result = summarize_calibration_stability(runs).iloc[0]
+        self.assertEqual(result["direction_stability"], "direction_unstable")
+        self.assertEqual(result["decision_stability"], "mixed_significance")
+        self.assertEqual(result["stability_class"], "direction_unstable")
+
+    def test_calibration_stability_detects_decision_instability(self):
+        runs = pd.DataFrame(
+            {
+                "endpoint": ["expression_matched_bias"] * 3,
+                "effect": [0.08, 0.06, 0.07],
+                "p_value": [0.001, 0.20, 0.03],
+            }
+        )
+        result = summarize_calibration_stability(runs).iloc[0]
+        self.assertEqual(result["direction_stability"], "stable_positive")
+        self.assertEqual(result["decision_stability"], "mixed_significance")
+        self.assertEqual(
+            result["stability_class"],
+            "direction_stable_decision_unstable",
+        )
+
+    def test_cli_stability_writes_summary(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "runs.csv"
+            output = root / "stability.csv"
+            pd.DataFrame(
+                {
+                    "endpoint": ["case_conflict"] * 3,
+                    "effect": [-0.2, -0.18, -0.16],
+                    "p_value": [0.001, 0.001, 0.002],
+                }
+            ).to_csv(source, index=False)
+            argv = [
+                "unitaware",
+                "stability",
+                "--input",
+                str(source),
+                "--out",
+                str(output),
+            ]
+            with patch.object(sys, "argv", argv):
+                self.assertEqual(main(), 0)
+            self.assertTrue(output.is_file())
+            result = pd.read_csv(output)
+            self.assertEqual(
+                result.loc[0, "stability_class"],
+                "stable_support",
+            )
 
 
 if __name__ == "__main__":

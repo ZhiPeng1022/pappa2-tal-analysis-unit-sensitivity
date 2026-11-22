@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the associated manuscript and archived release."
-title: "Analysis-unit dependence and effect-aware calibration in human kidney thick ascending limb single-cell studies"
+title: "Unit-aware calibration of single-cell disease associations: analysis-unit, effect-size, and graph-stability audits in human kidney atlases"
 type: software
 authors:
   - family-names: Zhi
@@ -12,8 +12,8 @@ authors:
   - family-names: Zhang
     given-names: Chaofan
     orcid: "https://orcid.org/0009-0009-9088-0016"
-version: "1.0.12"
-date-released: "2026-11-08"
+version: "1.0.13"
+date-released: "2026-11-22"
 repository-code: "https://github.com/ZhiPeng1022/pappa2-tal-analysis-unit-sensitivity"
 abstract: >-
   Analysis code, curated derived tables, and generated figures for
@@ -35,7 +35,13 @@ keywords:
   - bulk RNA sequencing
   - clinical association
   - reproducible software
+  - calibration stability
+  - graph sensitivity
+  - embedding sensitivity
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24441900"
+    description: "unitaware v0.3.0 software archive"
   - type: doi
     value: "10.5281/zenodo.24042041"
     description: "Exact archived analysis release for GSE175759 clinical association"
